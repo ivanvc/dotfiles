@@ -49,12 +49,13 @@ set expandtab                    " Use spaces instead of tabs
 
 set laststatus=2                  " Show the status line all the time
 " Useful status information at bottom of screen
-set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{GitBranchInfoString()}\ %{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
+set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}\ %{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
 
 " Pathogen
 runtime bundle/vim-pathogen/autoload/pathogen.vim
+call pathogen#infect() 
 
-" Or use vividchalk
+" IR Black theme
 colorscheme ir_black
 
 set cursorline                   " Hightlights the current line
@@ -84,20 +85,11 @@ if has("multi_byte")
   "et fileencodings=ucs-bom,utf-8,latin1
 endif
 
-" Paste with style
-"set paste
-
 " Mini buffer explorer
 map <leader>bo :MiniBufExplorer<cr>
 map <leader>bc :CMiniBufExplorer<cr>
 map <leader>br :UMiniBufExplorer<cr>
 map <leader>bu :UMiniBufExplorer<cr>
-
-" Git branch
-let g:git_branch_status_head_current=1
-
-" Fuzzy File Finder
-map <leader>t :FuzzyFinderTextMate<cr>
 
 " Rspec
 map <leader>r :Rake<cr>
@@ -105,9 +97,6 @@ map <leader>R :.Rake<cr>
 
 " Encoding
 "set ff=unix fenc=utf-8 enc=utf-8
-
-" Additional sources
-source ~/.vim/ftplugin/ruby_extra.vim
 
 " Shortcut to rapidly toggle `set list`
 nmap <leader>l :set list!<CR>
