@@ -1,0 +1,11 @@
+# From OSX.gitignore
+https://raw.github.com/github/gitignore/master/Global/OSX.gitignore
+
+# From vim.gitignore
+https://raw.github.com/github/gitignore/master/Global/vim.gitignore
+
+# Other stuff
+*.orig
+vendor/local
+.rbenv-version
+.bundle

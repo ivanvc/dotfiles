@@ -1,0 +1,33 @@
+[user]
+  name = Ivan Valdes (@ivanvc)
+  email = iv@nvald.es
+[alias]
+  c = commit
+  ci = commit --interactive
+  s = status
+  b = branch
+  co = checkout
+  r = rebase
+  re = reset
+  a = add
+  ai = add --interactive
+  m = merge
+  f = fetch
+  l = pull
+  p = push
+  d = diff
+  sh = stash
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
+[core]
+  excludesfile = ~/.gitignore
+[apply]
+  whitespace = nowarn
+[github]
+  user = ivanvc
+[merge]
+  tool = opendiff
+  summary = true
