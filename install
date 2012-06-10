@@ -1,0 +1,50 @@
+#!/usr/bin/env sh
+
+echo "Initializing git submodules"
+git submodule init
+git submodule update
+git submodule foreach "git submodule init && git submodule update"
+
+echo "Symlinking"
+for file in **/*.symlink ; do
+  target=`echo $file | awk '{ sub(/\.symlink$/, ""); print }'`
+  target=`echo $target | awk '{ sub(/[[:alnum:]_]+\//,""); print }'`
+  target="$HOME/.$target"
+  if [[ -e $target ]] ; then
+    echo "File $target already exist. Overwrite it? [y/N]"
+    read answer
+    if [[ "$answer" = "y" ]] ; then
+      rm -Rf "$target"
+    else
+      continue
+    fi
+  fi
+  echo "Processing $target"
+  ln -s "$PWD/$file" "$target"
+done
+
+echo "Processing remote files"
+for file in **/*.remote ; do
+  target=`echo $file | awk '{ sub(/\.remote$/, ""); print }'`
+  target=`echo $target | awk '{ sub(/[[:alnum:]_]+\//,""); print }'`
+  target="$HOME/.$target"
+  if [[ -e $target ]] ; then
+    echo "File $target already exist. Overwrite it? [y/N]"
+    read answer
+    if [[ "$answer" = "y" ]] ; then
+      rm -Rf "$target"
+    else
+      continue
+    fi
+  fi
+  echo "Processing $target"
+  cat $file | while read line ; do
+    url=`echo $line | awk '$0 ~ /^https?:\/\//'`
+    if [[ -z "$url" ]] ; then
+      echo "$line" >> $target
+    else
+      echo "Fetching $url"
+      curl -s $url >> $target
+    fi
+  done
+done
