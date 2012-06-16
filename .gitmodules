@@ -28,3 +28,6 @@
 [submodule "vim/vim.symlink/bundle/minibufexpl.vim"]
 	path = vim/vim.symlink/bundle/minibufexpl.vim
 	url = git://github.com/fholgado/minibufexpl.vim.git
+[submodule "z/z.symlink"]
+	path = z/z.symlink
+	url = git://github.com/rupa/z.git
