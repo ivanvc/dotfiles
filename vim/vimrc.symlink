@@ -1,6 +1,11 @@
 " Example Vim configuration.
 " Copy or symlink to ~/.vimrc or ~/_vimrc.
 
+" Pathogen
+runtime bundle/vim-pathogen/autoload/pathogen.vim
+call pathogen#infect() 
+call pathogen#helptags()
+
 set nocompatible                  " Must come first because it changes other options.
 
 syntax enable                     " Turn on syntax highlighting.
@@ -50,10 +55,6 @@ set expandtab                    " Use spaces instead of tabs
 set laststatus=2                  " Show the status line all the time
 " Useful status information at bottom of screen
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}\ %{exists('*CapsLockStatusline')?CapsLockStatusline():''}%=%-16(\ %l,%c-%v\ %)%P
-
-" Pathogen
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-call pathogen#infect() 
 
 " IR Black theme
 colorscheme ir_black
