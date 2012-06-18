@@ -1,0 +1,12 @@
+# Ctrl-x as escape key
+unbind C-b
+set -g prefix C-s
+
+# Vi mode
+setw -g mode-keys vi
+
+# Vi movement
+bind h select-pane -L
+bind j select-pane -D
+bind k select-pane -U
+bind l select-pane -R
