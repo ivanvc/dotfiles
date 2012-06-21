@@ -9,3 +9,4 @@ https://raw.github.com/github/gitignore/master/Global/vim.gitignore
 vendor/local
 .rbenv-version
 .bundle
+.powenv
