@@ -1,8 +1,8 @@
 if [[ -n $SSH_CONNECTION ]]; then
-  export PS1='%m:%3~$(git_branch)%# '
+  export PS1="%m:%3~$(git_branch)%# "
 else
-  export PS1='$(git_branch)[$(rbenv_info)]%# '
-  export RPS1='[%10~]';
+  export PS1="$(git_branch)[$(rbenv_info)]%# "
+  export RPS1="[%10~]";
 fi
 
 export CLICOLOR=1;
