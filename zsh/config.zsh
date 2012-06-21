@@ -1,7 +1,7 @@
 if [[ -n $SSH_CONNECTION ]]; then
-  export PS1='%m:%3~$(git_info_for_prompt)%# '
+  export PS1='%m:%3~$(git_branch)%# '
 else
-  export PS1='$(git_info_for_prompt)[$(rbenv_info_for_prompt)$(rvm_info_for_prompt)]%# '
+  export PS1='$(git_branch)[$(rbenv_info)]%# '
   export RPS1='[%10~]';
 fi
 
