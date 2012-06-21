@@ -4,6 +4,6 @@ git_branch() {
 
 rbenv_info() {
   if which rbenv > /dev/null ; then
-    rbenv version | sed 's/\([^ ]*\).*/\1/'
+    rbenv version | cut -d' ' -f1
   fi
 }
