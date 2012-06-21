@@ -7,8 +7,8 @@ fi
 
 export CLICOLOR=1;
 
-fpath=(~/.zsh/functions $fpath)
-autoload -U ~/.zsh/functions/*(:t)
+fpath=($ZSH/zsh/functions $fpath)
+autoload -U $ZSH/zsh/functions/*(:t)
 
 HISTFILE=~/.zsh_history
 HISTSIZE=1000
