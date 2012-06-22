@@ -10,3 +10,7 @@ bind h select-pane -L
 bind j select-pane -D
 bind k select-pane -U
 bind l select-pane -R
+
+# Fix pasteboard on MacOS X
+# Install with $ brew install reattach-to-user-namespace
+set-option -g default-command "reattach-to-user-namespace -l zsh"
