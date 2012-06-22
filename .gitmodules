@@ -31,3 +31,6 @@
 [submodule "z/z.symlink"]
 	path = z/z.symlink
 	url = git://github.com/rupa/z.git
+[submodule "vim/vim.symlink/bundle/badwolf"]
+	path = vim/vim.symlink/bundle/badwolf
+	url = git://github.com/sjl/badwolf.git
