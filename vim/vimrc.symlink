@@ -3,7 +3,7 @@
 
 " Pathogen
 runtime bundle/vim-pathogen/autoload/pathogen.vim
-call pathogen#infect() 
+call pathogen#infect()
 call pathogen#helptags()
 
 set nocompatible                  " Must come first because it changes other options.
@@ -58,6 +58,12 @@ set statusline=[%n]\ %<%.99f\ %h%w%m%r%y\ %{fugitive#statusline()}\ %{exists('*C
 
 " IR Black theme
 colorscheme ir_black
+
+" Match trailing spaces
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+\%#\@<!$/
+au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+au InsertLeave * match ExtraWhitespace /\s\+$/
 
 set cursorline                   " Hightlights the current line
 
