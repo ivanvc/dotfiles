@@ -9,6 +9,7 @@ export CLICOLOR=1;
 
 fpath=($ZSH/zsh/functions $fpath)
 autoload -U $ZSH/zsh/functions/*(:t)
+autoload edit-command-line
 
 HISTFILE=~/.zsh_history
 HISTSIZE=1000
@@ -34,6 +35,7 @@ setopt HIST_IGNORE_ALL_DUPS  # don't record dupes in history
 setopt HIST_REDUCE_BLANKS
 
 zle -N newtab
+zle -N edit-command-line
 
 bindkey '^[^[[D' backward-word
 bindkey '^[^[[C' forward-word
@@ -41,6 +43,7 @@ bindkey '^[[5D' beginning-of-line
 bindkey '^[[5C' end-of-line
 bindkey '^[[3~' delete-char
 bindkey '^[^N' newtab
-bindkey '^?' backward-delete-char 
+bindkey '^?' backward-delete-char
 bindkey ';2D' backward-word
 bindkey ';2C' forward-word
+bindkey '^Xe' edit-command-line
