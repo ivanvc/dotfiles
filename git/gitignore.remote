@@ -10,3 +10,6 @@ vendor/local
 .rbenv-version
 .bundle
 .powenv
+
+# Autocompletion files
+.*~
