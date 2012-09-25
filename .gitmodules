@@ -37,3 +37,6 @@
 [submodule "z/rupa-z"]
 	path = z/rupa-z
 	url = git@github.com:rupa/z.git
+[submodule "vim/vim.symlink/bundle/vim-smartinput"]
+	path = vim/vim.symlink/bundle/vim-smartinput
+	url = git://github.com/kana/vim-smartinput.git
