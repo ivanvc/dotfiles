@@ -7,3 +7,8 @@ function rbenv_info {
     rbenv version | cut -d' ' -f1
   fi
 }
+
+function zle-keymap-select {
+  VIMODE="${${KEYMAP/vicmd/ M:command}/(main|viins)/}"
+  zle reset-prompt
+}

@@ -2,14 +2,14 @@ if [[ -n $SSH_CONNECTION ]]; then
   export PS1='%m:%3~[$(git_branch):$(rbenv_info)]%# '
 else
   export PS1='$(git_branch)[$(rbenv_info)]%# '
-  export RPS1='[%10~]';
+  export RPS1='${VIMODE}[%10~]';
 fi
 
 export CLICOLOR=1;
 
 fpath=($ZSH/zsh/functions $fpath)
 autoload -U $ZSH/zsh/functions/*(:t)
-autoload edit-command-line
+autoload -U edit-command-line
 
 HISTFILE=~/.zsh_history
 HISTSIZE=1000
@@ -36,14 +36,15 @@ setopt HIST_REDUCE_BLANKS
 
 zle -N newtab
 zle -N edit-command-line
+zle -N zle-keymap-select
 
+bindkey -M vicmd v edit-command-line
+bindkey '^X^e' edit-command-line
 bindkey '^[^[[D' backward-word
 bindkey '^[^[[C' forward-word
 bindkey '^[[5D' beginning-of-line
 bindkey '^[[5C' end-of-line
 bindkey '^[[3~' delete-char
-bindkey '^[^N' newtab
 bindkey '^?' backward-delete-char
 bindkey ';2D' backward-word
 bindkey ';2C' forward-word
-bindkey '^Xe' edit-command-line
