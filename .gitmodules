@@ -43,6 +43,3 @@
 [submodule "vim/vim.symlink/bundle/vim-slim"]
 	path = vim/vim.symlink/bundle/vim-slim
 	url = git://github.com/bbommarito/vim-slim.git
-[submodule "vim/vim.symlink/bundle/vim-gnupg"]
-	path = vim/vim.symlink/bundle/vim-gnupg
-	url = git://github.com/jamessan/vim-gnupg.git

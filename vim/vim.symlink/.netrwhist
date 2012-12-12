@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/Users/ivan/Code/MoHound/beagle/test/functional'
+let g:netrw_dirhist_2='/Users/ivan/Code/MoHound/deerhound/cookbooks/users'
+let g:netrw_dirhist_3='/Users/ivan/Code/MoHound/deerhound/cookbooks/users/recipes'
+let g:netrw_dirhist_4='/Users/ivan/Code/MoHound/foxhound/config/deploy'
+let g:netrw_dirhist_5='/Users/ivan/Code/MoHound/beagle/spec/factories'
+let g:netrw_dirhist_6='/Users/ivan/Code/MoHound/beagle/app/views/dashboard'
+let g:netrw_dirhist_7='/Users/ivan/Code/MoHound/bloodhound/config/deploy'
