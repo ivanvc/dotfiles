@@ -31,9 +31,6 @@
 [submodule "vim/vim.symlink/bundle/badwolf"]
 	path = vim/vim.symlink/bundle/badwolf
 	url = git://github.com/sjl/badwolf.git
-[submodule "z/z.symlink"]
-	path = z/z.symlink
-	url = git@github.com:rupa/z.git
 [submodule "z/rupa-z"]
 	path = z/rupa-z
 	url = git@github.com:rupa/z.git
@@ -46,3 +43,6 @@
 [submodule "vim/vim.symlink/bundle/vim-slim"]
 	path = vim/vim.symlink/bundle/vim-slim
 	url = git://github.com/bbommarito/vim-slim.git
+[submodule "vim/vim.symlink/bundle/vim-gnupg"]
+	path = vim/vim.symlink/bundle/vim-gnupg
+	url = git://github.com/embear/vim-gnupg.git
