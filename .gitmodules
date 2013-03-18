@@ -40,3 +40,6 @@
 [submodule "z/rupa-z"]
 	path = z/rupa-z
 	url = git@github.com:rupa/z.git
+[submodule "vim/vim.symlink/vim-slim"]
+	path = vim/vim.symlink/vim-slim
+	url = git@github.com:slim-template/vim-slim.git
