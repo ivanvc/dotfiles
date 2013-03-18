@@ -24,7 +24,7 @@
   interactive = auto
 [core]
   excludesfile = ~/.gitignore
-   editor = vim
+  editor = vim
 [apply]
   whitespace = nowarn
 [github]
@@ -32,3 +32,5 @@
 [merge]
   tool = opendiff
   summary = true
+[push]
+  default = simple
