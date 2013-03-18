@@ -7,7 +7,7 @@ https://raw.github.com/github/gitignore/master/Global/vim.gitignore
 # Other stuff
 *.orig
 vendor/local
-.rbenv-version
+.ruby-version
 .bundle
 .powenv
 
