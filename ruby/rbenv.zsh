@@ -1,9 +1,6 @@
 # path
 if [[ -d $HOME/.rbenv ]] || which rbenv > /dev/null ; then
   [[ -d $HOME/.rbenv/bin ]] && PATH="$HOME/.rbenv/bin:$PATH"
-  if [[ -d /usr/local/opt/rbenv ]] ; then
-    export RBENV_ROOT=/usr/local/opt/rbenv
-  fi
   eval "$(rbenv init -)"
 fi
 
