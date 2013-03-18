@@ -28,9 +28,6 @@
 [submodule "vim/vim.symlink/bundle/badwolf"]
 	path = vim/vim.symlink/bundle/badwolf
 	url = git://github.com/sjl/badwolf.git
-[submodule "vim/vim.symlink/bundle/vim-smartinput"]
-	path = vim/vim.symlink/bundle/vim-smartinput
-	url = git://github.com/kana/vim-smartinput.git
 [submodule "vim/vim.symlink/bundle/vim-powerline"]
 	path = vim/vim.symlink/bundle/vim-powerline
 	url = git://github.com/Lokaltog/vim-powerline.git
