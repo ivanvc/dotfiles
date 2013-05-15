@@ -4,6 +4,7 @@
 [alias]
   c = commit
   ci = commit --interactive
+  ca = commit --amend
   s = status
   b = branch
   co = checkout
@@ -15,6 +16,7 @@
   f = fetch
   l = pull
   p = push
+  po = push origin
   d = diff
   sh = stash
 [color]
