@@ -1,5 +1,5 @@
 # zsh as main shell
-set-option -g default-shell /home/action/.parts/bin/zsh
+set-option -g default-shell /usr/bin/zsh
 
 # Ctrl-x as escape key
 unbind C-b
@@ -36,7 +36,7 @@ set -g status-interval 5
 
 # Battery
 # brew tap ivanvc/battery ; brew install batery
-set -g status-right '#[fg=colour245] ⮃ %l:%M ⮃ %d %b #[fg=colour254,bg=colour234,nobold]⮂#[fg=colour16,bg=colour254,bold] #h '
+set -g status-right '#[fg=colour245] ⮃ %l:%M ⮃ %d %b #[fg=colour254,bg=colour234,nobold]⮂#[fg=colour16,bg=colour254,bold] nitrous.io '
 
 set -g window-status-format "#[fg=white,bg=colour234] #I #W "
 set -g window-status-current-format "#[fg=colour234,bg=colour208]⮀#[fg=colour16,bg=colour208,noreverse,bold] #I ⮁ #W #[fg=colour208,bg=colour234,nobold]⮀"

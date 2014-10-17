@@ -1,9 +1,4 @@
-if [[ -n $SSH_CONNECTION ]]; then
-  export PS1='%m:%3~[$(git_branch):$(rbenv_info)]%# '
-else
-  export PS1='$(git_branch)[$(rbenv_info)]%# '
-  export RPS1='${VIMODE}[%10~]';
-fi
+export PS1='$(git_branch)[nitrous.io:%3~]%# '
 
 export CLICOLOR=1;
 
