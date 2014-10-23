@@ -28,9 +28,6 @@
 [submodule "vim/vim.symlink/bundle/badwolf"]
 	path = vim/vim.symlink/bundle/badwolf
 	url = git://github.com/sjl/badwolf.git
-[submodule "vim/vim.symlink/bundle/vim-powerline"]
-	path = vim/vim.symlink/bundle/vim-powerline
-	url = git://github.com/Lokaltog/vim-powerline.git
 [submodule "vim/vim.symlink/bundle/vim-gnupg"]
 	path = vim/vim.symlink/bundle/vim-gnupg
 	url = git://github.com/jamessan/vim-gnupg.git
@@ -55,12 +52,6 @@
 [submodule "vim/vim.symlink/bundle/last256"]
 	path = vim/vim.symlink/bundle/last256
 	url = git@github.com:sk1418/last256.git
-[submodule "vim/vim.symlink/iceberg"]
-	path = vim/vim.symlink/iceberg
-	url = git@github.com:cocopon/iceberg.vim.git
-[submodule "vim/vim.symlink/bundle/lavalamp"]
-	path = vim/vim.symlink/bundle/lavalamp
-	url = git@github.com:jasonlong/lavalamp.git
 [submodule "vim/vim.symlink/bundle/CSApprox"]
 	path = vim/vim.symlink/bundle/CSApprox
 	url = git@github.com:vim-scripts/CSApprox.git
