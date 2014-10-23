@@ -1,7 +1,7 @@
 if [[ -n $SSH_CONNECTION ]]; then
-  export PS1='%m:%3~[$(git_branch):$(rbenv_info)]%# '
+  export PS1='%m:%3~[$(git_branch):$RUBY_VERSION]%# '
 else
-  export PS1='$(git_branch)[$(rbenv_info)]%# '
+  export PS1='$(git_branch)[$RUBY_VERSION]%# '
   export RPS1='${VIMODE}[%10~]';
 fi
 

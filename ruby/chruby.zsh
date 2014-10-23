@@ -13,9 +13,7 @@ save_function chruby old_chruby
 chruby() {
   old_chruby $*
   PATH=$(echo $PATH | sed 's/\.\/bin://' | sed 's/\.\/vendor\/local\/bin://')
-  echo $PATH
   PATH="./bin:./vendor/local/bin:$PATH"
-  echo $PATH
 }
 
 chruby ruby-2.1.3
