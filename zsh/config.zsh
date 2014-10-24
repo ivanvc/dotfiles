@@ -1,5 +1,3 @@
-export PS1='$(git_branch)[nitrous.io:%3~]%# '
-
 export CLICOLOR=1;
 
 fpath=($ZSH/zsh/functions $fpath)
