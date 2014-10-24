@@ -32,7 +32,9 @@
 [github]
   user = ivanvc
 [merge]
-  tool = opendiff
+  tool = vimdiff
   summary = true
 [push]
   default = simple
+[difftool]
+  prompt = false
