@@ -43,3 +43,9 @@
 [submodule "vim/vim.symlink/bundle/vim-smartinput"]
 	path = vim/vim.symlink/bundle/vim-smartinput
 	url = git@github.com:kana/vim-smartinput.git
+[submodule "warp"]
+	path = warp
+	url = git@github.com:jpalardy/warp.git
+[submodule "warp/warp"]
+	path = warp/warp
+	url = git@github.com:jpalardy/warp.git
