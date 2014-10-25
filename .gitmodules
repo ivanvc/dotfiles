@@ -43,3 +43,21 @@
 [submodule "warp/warp"]
 	path = warp/warp
 	url = git@github.com:jpalardy/warp.git
+[submodule "vim/vim.symlink/bundle/vim-vividchalk"]
+	path = vim/vim.symlink/bundle/vim-vividchalk
+	url = git@github.com:Arkham/vim-vividchalk.git
+[submodule "vim/vim.symlink/bundle/vim-monokai"]
+	path = vim/vim.symlink/bundle/vim-monokai
+	url = git@github.com:sickill/vim-monokai.git
+[submodule "vim/vim.symlink/bundle/flatlandia"]
+	path = vim/vim.symlink/bundle/flatlandia
+	url = git@github.com:jordwalke/flatlandia.git
+[submodule "vim/vim.symlink/bundle/last256"]
+	path = vim/vim.symlink/bundle/last256
+	url = git@github.com:sk1418/last256.git
+[submodule "vim/vim.symlink/bundle/CSApprox"]
+	path = vim/vim.symlink/bundle/CSApprox
+	url = git@github.com:vim-scripts/CSApprox.git
+[submodule "vim/vim.symlink/bundle/vim-airline"]
+	path = vim/vim.symlink/bundle/vim-airline
+	url = git@github.com:bling/vim-airline.git
