@@ -1,14 +1,16 @@
 set nocompatible                  " Must come first because it changes other options.
 
-" Pathogen
-runtime bundle/vim-pathogen/autoload/pathogen.vim
-call pathogen#infect()
-call pathogen#helptags()
+" Vundle
+filetype off                       " Disable file type detection (Vundle)
+set rtp+=~/.vim/bundle/Vundle.vim  " Set the runtime path to include Vundle and initialize
+call vundle#begin('~/.vim/vundle') " Initialize in custom path
+source ~/.vim/Vundlefile           " Don't pollute this file with Plugins
+call vundle#end()                  " required
 
 set laststatus=2                  " Always display status bar
 
 syntax enable                     " Turn on syntax highlighting.
-filetype on                       " Enable file type detection.
+filetype on                       " And now enable it
 filetype indent on                " Enable specific indent.
 filetype plugin indent on         " Turn on file type detection.
 compiler ruby                     " Enable compiler support for ruby.
@@ -52,7 +54,7 @@ set shiftwidth=2                 " And again, related.
 set expandtab                    " Use spaces instead of tabs
 
 set background=dark              " Dark background
-colorscheme lavalamp
+colorscheme ir_black
 set cursorline                   " Hightlights the current line
 set colorcolumn=80               " Display 80 chars column
 hi CursorLine ctermbg=black      " Change cursor line bg color
