@@ -1,11 +1,23 @@
-function git_branch {
-  echo $(/usr/bin/git symbolic-ref HEAD 2>/dev/null | awk -F/ {'print $NF'})
+if [ -f $HOME/.nitrousboxrc ] ; then
+  export PS1='$(git_branch)[nitrous.io:%2~]%# '
+else
+  if [[ -n $SSH_CONNECTION ]]; then
+    export PS1='$(git_branch)[%m:%2~]%# '
+  else
+    export PS1='$(git_branch)[%2~]%# '
+  fi
+fi
+
+export SPROMPT='zsh: correct %F{red}%R%f to %F{green}%r%f [nyae]? '
+export RPROMPT='[%D{%L:%M:%S %p}]'
+export TMOUT=1
+
+TRAPALRM() {
+  zle reset-prompt
 }
 
-function rbenv_info {
-  if which rbenv > /dev/null ; then
-    rbenv version | cut -d' ' -f1
-  fi
+function git_branch {
+  echo $(/usr/bin/git symbolic-ref HEAD 2>/dev/null | awk -F/ {'print $NF'})
 }
 
 function zle-keymap-select {

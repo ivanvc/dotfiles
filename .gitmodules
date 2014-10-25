@@ -40,6 +40,9 @@
 [submodule "vim/vim.symlink/bundle/vim-smartinput"]
 	path = vim/vim.symlink/bundle/vim-smartinput
 	url = git@github.com:kana/vim-smartinput.git
+[submodule "warp/warp"]
+	path = warp/warp
+	url = git@github.com:jpalardy/warp.git
 [submodule "vim/vim.symlink/bundle/vim-vividchalk"]
 	path = vim/vim.symlink/bundle/vim-vividchalk
 	url = git@github.com:Arkham/vim-vividchalk.git

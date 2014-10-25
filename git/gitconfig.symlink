@@ -32,10 +32,12 @@
 [github]
   user = ivanvc
 [merge]
-  tool = opendiff
+  tool = vimdiff
   summary = true
 [push]
   default = simple
+[difftool]
+  prompt = false
 [filter "media"]
   clean = git-media-clean %f
   smudge = git-media-smudge %f

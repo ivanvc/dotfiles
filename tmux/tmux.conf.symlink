@@ -1,3 +1,6 @@
+# zsh as main shell
+set-option -g default-shell /usr/bin/zsh
+
 # Ctrl-x as escape key
 unbind C-b
 set -g prefix C-s
@@ -13,7 +16,7 @@ bind l select-pane -R
 
 # Fix pasteboard on MacOS X
 # Install with $ brew install reattach-to-user-namespace
-set-option -g default-command "reattach-to-user-namespace -l zsh"
+#set-option -g default-command "reattach-to-user-namespace -l zsh"
 
 set -g default-terminal "screen-256color"
 set -g status-bg colour234
@@ -33,7 +36,7 @@ set -g status-interval 5
 
 # Battery
 # brew tap ivanvc/battery ; brew install batery
-set -g status-right '#(/usr/local/bin/battery -o tmux) #[fg=colour245] ⮃ %l:%M ⮃ %d %b #[fg=colour254,bg=colour234,nobold]⮂#[fg=colour16,bg=colour254,bold] #h '
+set -g status-right '#[fg=colour245] ⮃ %l:%M ⮃ %d %b #[fg=colour254,bg=colour234,nobold]⮂#[fg=colour16,bg=colour254,bold] nitrous.io '
 
 set -g window-status-format "#[fg=white,bg=colour234] #I #W "
-set -g window-status-current-format "#[fg=colour234,bg=colour39]⮀#[fg=colour16,bg=colour39,noreverse,bold] #I ⮁ #W #[fg=colour39,bg=colour234,nobold]⮀"
+set -g window-status-current-format "#[fg=colour234,bg=colour208]⮀#[fg=colour16,bg=colour208,noreverse,bold] #I ⮁ #W #[fg=colour208,bg=colour234,nobold]⮀"
