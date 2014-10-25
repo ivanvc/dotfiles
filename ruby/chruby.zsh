@@ -1,5 +1,7 @@
-source /usr/local/opt/chruby/share/chruby/chruby.sh
-source /usr/local/opt/chruby/share/chruby/auto.sh
+if [ -d /usr/local/opt/chruby ] ; then
+  source /usr/local/opt/chruby/share/chruby/chruby.sh
+  source /usr/local/opt/chruby/share/chruby/auto.sh
+fi
 
 save_function()
 {
@@ -16,4 +18,4 @@ chruby() {
   PATH="./bin:./vendor/local/bin:$PATH"
 }
 
-chruby ruby-2.1.3
+chruby ruby-2.1
