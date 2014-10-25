@@ -1,6 +1,9 @@
 # lazy rake alias :P
 alias rk='rake'
 
+# Spring alias
+alias s='spring'
+
 # Rails 2.x
 alias sc='script/console'
 alias ss='script/server'
