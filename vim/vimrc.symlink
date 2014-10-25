@@ -137,7 +137,8 @@ autocmd FileType java setlocal sw=4 sts=4 et " Set indentation level
 let g:gist_clip_command = 'pbcopy' " Gist: copy using system clipboard
 let g:gist_detect_filetype = 1     " Auto detect file type
 
-set wildignore+=vendor/local/**    " Command-T ignore vendor folder
+let g:ctrlp_map = '<Leader>t'      " ctrlp remap
+set wildignore+=vendor/local/**    " ctrlp ignore vendor folder
 
 " Airline
 let g:airline_powerline_fonts = 1  " Display fancy characters in airline
