@@ -3,9 +3,7 @@ set nocompatible                  " Must come first because it changes other opt
 " Vundle
 filetype off                       " Disable file type detection (Vundle)
 set rtp+=~/.vim/bundle/Vundle.vim  " Set the runtime path to include Vundle and initialize
-call vundle#begin('~/.vim/vundle') " Initialize in custom path
 source ~/.vim/Vundlefile           " Don't pollute this file with Plugins
-call vundle#end()                  " required
 
 set laststatus=2                  " Always display status bar
 
@@ -53,11 +51,17 @@ set tabstop=2                    " Global tab width.
 set shiftwidth=2                 " And again, related.
 set expandtab                    " Use spaces instead of tabs
 
+set t_Co=256                     " Explicitly tell Vim that the terminal supports 256 colors
 set background=dark              " Dark background
-colorscheme ir_black
 set cursorline                   " Hightlights the current line
 set colorcolumn=80               " Display 80 chars column
 hi CursorLine ctermbg=black      " Change cursor line bg color
+
+" Display trailing white spaces
+highlight ExtraWhitespace ctermbg=darkred guibg=red   " Set color
+match ExtraWhitespace /\s\+\%#\@<!$/                  " Whitespace regex
+au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/ " Don't display in insert mode
+au InsertLeave * match ExtraWhitespace /\s\+$/        " Display after exiting insert mode
 
 " Tab mappings.
 map <leader>tt :tabnew<cr>
@@ -84,16 +88,6 @@ if has("multi_byte")
   "et fileencodings=ucs-bom,utf-8,latin1
 endif
 
-" Mini buffer explorer
-map <leader>bo :MiniBufExplorer<cr>
-map <leader>bc :CMiniBufExplorer<cr>
-map <leader>br :UMiniBufExplorer<cr>
-map <leader>bu :UMiniBufExplorer<cr>
-
-" Rspec
-map <leader>r :Rake<cr>
-map <leader>R :.Rake<cr>
-
 " Encoding
 "set ff=unix fenc=utf-8 enc=utf-8
 set encoding=utf8
@@ -110,6 +104,7 @@ set listchars+=extends:>          " the character to show in the last column whe
 set listchars+=precedes:<         " the character to show in the first column when wrap is
                                   " off and the line continues beyond the left of the screen
 
+" _= and _$ functions, to remove trailing white spaces and re-indent.
 function! Preserve(command)
   " Preparation: save last search, and cursor position.
   let _s=@/
@@ -133,20 +128,3 @@ autocmd BufNewFile,BufRead *.mxml,*.as :nmap <C-A> :!bash ~/.vim/bin/fcshcmp.sh 
 " Java
 au Bufread,BufNewFile *.as set filetype=java " Load as files
 autocmd FileType java setlocal sw=4 sts=4 et " Set indentation level
-
-let g:gist_clip_command = 'pbcopy' " Gist: copy using system clipboard
-let g:gist_detect_filetype = 1     " Auto detect file type
-
-let g:ctrlp_map = '<Leader>t'      " ctrlp remap
-set wildignore+=vendor/local/**    " ctrlp ignore vendor folder
-
-" Airline
-let g:airline_powerline_fonts = 1  " Display fancy characters in airline
-
-set t_Co=256                       " Explicitly tell Vim that the terminal supports 256 colors
-
-" Display trailing white spaces
-highlight ExtraWhitespace ctermbg=darkred guibg=red   " Set color
-match ExtraWhitespace /\s\+\%#\@<!$/                  " Whitespace regex
-au InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/ " Don't display in insert mode
-au InsertLeave * match ExtraWhitespace /\s\+$/        " Display after exiting insert mode

@@ -1,13 +1,37 @@
+" vi:syntax=vim
+
+call vundle#begin('~/.vim/vundle') " Initialize in custom path
+
 Plugin 'wgibbs/vim-irblack'
+
+Plugin 'kien/ctrlp.vim'
+Plugin 'bling/vim-airline'
+
 Plugin 'vim-ruby/vim-ruby'
-Plugin 'tpope/vim-rails'
 Plugin 'kchmck/vim-coffee-script'
-Plugin 'tpope/vim-fugitive'
 Plugin 'groenewege/vim-less'
-Plugin 'jamessan/vim-gnupg'
+Plugin 'vim-scripts/VimClojure'
 Plugin 'slim-template/vim-slim'
 Plugin 'kana/vim-smartinput'
-Plugin 'bling/vim-airline'
-Plugin 'vim-scripts/VimClojure'
-Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-rails'
+
+Plugin 'tpope/vim-fugitive'
+Plugin 'jamessan/vim-gnupg'
 Plugin 'rking/ag.vim'
+
+call vundle#end()                  " required
+
+" And now Plugins specific configuration
+" vim-irblack
+colorscheme ir_black               " set IR Black colorscheme
+
+" ctrlp
+let g:ctrlp_map = '<Leader>t'      " remap
+set wildignore+=*/vendor/local/**  " ignore vendor folder
+
+" airline
+let g:airline_powerline_fonts = 1  " Display fancy characters in airline
+
+" Rails mappings
+map <leader>r :Rake<cr>
+map <leader>R :.Rake<cr>
