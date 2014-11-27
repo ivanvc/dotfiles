@@ -10,7 +10,7 @@ fi
 
 export SPROMPT='zsh: correct %F{red}%R%f to %F{green}%r%f [nyae]? '
 export RPROMPT='[%D{%L:%M:%S %p}]'
-export TMOUT=1
+export TMOUT=5
 
 TRAPALRM() {
   zle reset-prompt
