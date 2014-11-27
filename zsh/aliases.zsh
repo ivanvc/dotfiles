@@ -14,3 +14,6 @@ alias %=' '
 alias grep='grep --color=auto'
 alias egrep='grep --color=auto'
 alias fgrep='grep --color=auto'
+
+# colored mans
+alias man="TERMINFO=~/.terminfo/ LESS=C TERM=mostlike PAGER=less man"
