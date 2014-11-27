@@ -128,3 +128,6 @@ autocmd BufNewFile,BufRead *.mxml,*.as :nmap <C-A> :!bash ~/.vim/bin/fcshcmp.sh 
 " Java
 au Bufread,BufNewFile *.as set filetype=java " Load as files
 autocmd FileType java setlocal sw=4 sts=4 et " Set indentation level
+
+" Mutt
+au BufRead /tmp/mutt-* set tw=72  " limit width to 72 chars"
