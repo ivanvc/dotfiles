@@ -3,6 +3,7 @@
 call vundle#begin('~/.vim/vundle') " Initialize in custom path
 
 Plugin 'wgibbs/vim-irblack'
+Plugin 'altercation/vim-colors-solarized'
 
 Plugin 'kien/ctrlp.vim'
 Plugin 'bling/vim-airline'
@@ -14,6 +15,7 @@ Plugin 'vim-scripts/VimClojure'
 Plugin 'slim-template/vim-slim'
 Plugin 'kana/vim-smartinput'
 Plugin 'tpope/vim-rails'
+Plugin 'digitaltoad/vim-jade'
 
 Plugin 'tpope/vim-fugitive'
 Plugin 'jamessan/vim-gnupg'
@@ -23,7 +25,9 @@ call vundle#end()                  " required
 
 " And now Plugins specific configuration
 " vim-irblack
-colorscheme ir_black               " set IR Black colorscheme
+" colorscheme ir_black               " set IR Black colorscheme
+" solarized
+colorscheme solarized
 
 " ctrlp
 let g:ctrlp_map = '<Leader>t'      " remap
