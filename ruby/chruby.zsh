@@ -17,5 +17,3 @@ chruby() {
   PATH=$(echo $PATH | sed 's/\.\/bin://' | sed 's/\.\/vendor\/local\/bin://')
   PATH="./bin:./vendor/local/bin:$PATH"
 }
-
-chruby ruby-2.1
