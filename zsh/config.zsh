@@ -1,4 +1,5 @@
 export CLICOLOR=1;
+export EDITOR=vim;
 
 fpath=($ZSH/zsh/functions $fpath)
 autoload -U $ZSH/zsh/functions/*(:t)
