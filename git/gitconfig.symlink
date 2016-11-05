@@ -12,6 +12,7 @@
   re = reset
   a = add
   ai = add --interactive
+  ap = add --patch
   m = merge
   f = fetch
   l = pull
@@ -19,11 +20,16 @@
   po = push origin
   d = diff
   sh = stash
+  last = log -1
+  la = log -1 --pretty=format:'%cr: [%h] %an - %s' --abbrev-commit --date=relative
+  lt = log --graph --pretty=format:'[%h] -%d %an %cr: %s' --abbrev-commit --date=relative
 [color]
   diff = auto
   status = auto
   branch = auto
   interactive = auto
+  added = blue
+  changed = yellow
 [core]
   excludesfile = ~/.gitignore
   editor = vim
