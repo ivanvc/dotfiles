@@ -1,1 +1,1 @@
-export TZ='America/Mexico_City'
+export TZ='America/Los_Angeles'

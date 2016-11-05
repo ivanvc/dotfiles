@@ -1,9 +1,9 @@
 set nocompatible                  " Must come first because it changes other options.
 
 " Vundle
-filetype off                       " Disable file type detection (Vundle)
-set rtp+=~/.vim/bundle/Vundle.vim  " Set the runtime path to include Vundle and initialize
-source ~/.vim/Vundlefile           " Don't pollute this file with Plugins
+filetype off                      " Disable file type detection (Vundle)
+set rtp+=~/.vim/bundle/Vundle.vim " Set the runtime path to include Vundle and initialize
+source ~/.vim/Vundlefile          " Don't pollute this file with Plugins
 
 set laststatus=2                  " Always display status bar
 
