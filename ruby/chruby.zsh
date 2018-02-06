@@ -10,7 +10,9 @@ save_function()
   eval "$NEWNAME_FUNC"
 }
 
-save_function chruby old_chruby
+if type chruby &>/dev/null; then
+  save_function chruby old_chruby
+fi
 
 chruby() {
   old_chruby $*
