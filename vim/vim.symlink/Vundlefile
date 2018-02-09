@@ -6,8 +6,7 @@ Plugin 'wgibbs/vim-irblack'
 Plugin 'altercation/vim-colors-solarized'
 
 Plugin 'kien/ctrlp.vim'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plugin 'itchyny/lightline.vim'
 
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'fatih/vim-go'
@@ -23,11 +22,14 @@ Plugin 'digitaltoad/vim-jade'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'derekwyatt/vim-scala'
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
 
 Plugin 'tpope/vim-fugitive'
 Plugin 'jamessan/vim-gnupg'
 Plugin 'rking/ag.vim'
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'vimwiki/vimwiki'
 
 call vundle#end()                  " required
 
@@ -37,14 +39,16 @@ call vundle#end()                  " required
 " solarized
 colorscheme solarized
 
+" Lightline
+let g:lightline = { 'colorscheme': 'solarized' }
+
 " ctrlp
 let g:ctrlp_map = '<Leader>t'      " remap
 set wildignore+=*/vendor/local/**  " ignore vendor folder
 
-" airline
-let g:airline_powerline_fonts = 1  " Display fancy characters in airline
-let g:airline_theme = 'solarized'  " Solarized theme
-
 " Rails mappings
 map <leader>r :Rake<cr>
 map <leader>R :.Rake<cr>
+
+" Don't fold markdown
+let g:vim_markdown_folding_disabled = 1
