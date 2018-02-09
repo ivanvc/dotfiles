@@ -14,12 +14,11 @@ bind j select-pane -D
 bind k select-pane -U
 bind l select-pane -R
 
-# Fix pasteboard on MacOS X
-# Install with $ brew install reattach-to-user-namespace
-#set-option -g default-command "reattach-to-user-namespace -l zsh"
+# Handle reloads
+bind r source-file ~/.tmux.conf
 
 set -g default-terminal "screen-256color"
-set -g status-bg colour234
+set -g status-bg colour235
 set -g window-status-activity-attr bold
 set -g pane-border-fg colour245
 set -g pane-active-border-fg colour39
@@ -34,10 +33,15 @@ set -g message-attr bold
 set -g status-left-length 32
 set -g status-right-length 150
 set -g status-interval 5
+set -g status-position bottom
 
-# Battery
-# brew tap ivanvc/battery ; brew install batery
-set -g status-right '#[fg=colour245]  %l:%M  %d %b #[fg=colour254,bg=colour234,nobold]#[fg=colour16,bg=colour254,bold] #H '
+set -g status-right '#[fg=colour248,bg=colour237]  %H#[fg=colour244]:#[fg=colour248]%M  #[bg=colour240]  #[fg=colour250]%d#[fg=colour245]/#[fg=colour250]%m  #[fg=colour240,bg=colour254]  @#[fg=colour16,bold]#H  '
+set -g status-left '#[fg=colour245,bg=colour240] [#[fg=colour253]#S#[fg=colour245]] '
+set -g window-status-format '#[fg=colour244,bg=colour237] #I #[fg=colour245]⎜#[fg=colour250] #W  '
+set -g window-status-current-format '#[fg=colour16,bg=colour208,bold] #I #[fg=colour239,nobold]⎜#[fg=white,bg=colour239] #W  '
 
-set -g window-status-format "#[fg=white,bg=colour234] #I #[fg=colour235]#[fg=white] #W "
-set -g window-status-current-format "#[fg=colour234,bg=colour208]#[fg=colour16,bg=colour208,noreverse,bold] #I  #W #[fg=colour208,bg=colour234,nobold]"
+# Fix pasteboard on MacOS X
+# Install with $ brew install reattach-to-user-namespace
+#set-option -g default-command "reattach-to-user-namespace -l zsh"
+
+source-file ~/.tmux.local.conf
