@@ -41,19 +41,19 @@ draw_bold_text_with_bright_colors: true
 font:
   # The normal (roman) font face to use.
   normal:
-    family: Input
+    family: Hack
     # Style can be specified to pick a specific face.
     # style: Regular
 
   # The bold font face
   bold:
-    family: Input
+    family: Hack
     # Style can be specified to pick a specific face.
     style: Bold
 
   # The italic font face
   italic:
-    family: Input
+    family: Hack
     # Style can be specified to pick a specific face.
     style: Italic
 
@@ -237,6 +237,8 @@ background_opacity: 1.0
 # - Copy (TODO)
 mouse_bindings:
   - { mouse: Middle, action: PasteSelection }
+  - { mouse: Left, action: Copy }
+  - { mouse: Release, action: Copy }
 
 mouse:
   # Click settings
