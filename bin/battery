@@ -1,0 +1,57 @@
+#!/bin/sh
+#
+# z3bra - (c) wtfpl 2014
+
+usage () {
+    cat <<EOF
+usage: $(basename $0) [-hlsb]
+    -h : print this help
+    -l : print battery percentage (default)
+    -s : print battery state
+    -b : beep under critical level (see BAT_BELL)
+
+environment:
+    CRITICAL : the critical state level
+    BAT_BELL : the command to run when run with -b flag under CRITICAL level
+EOF
+}
+
+# if battery is under a critical level, $BAT_BELL will be run
+bell () {
+    # don't do anything if we're over the critical level, or the battery is
+    # charging
+    test ${BATC} -gt ${CRITICAL}    && return 0
+    test ${BATS} != "Discharging"   && return 0
+
+    $BAT_BELL
+}
+
+# output the current battery level
+level () {
+    echo "${BATC}%"
+}
+
+# print the current battery state
+state () {
+    echo "${BATS}"
+}
+
+# get battery name
+BATN=$(ls /sys/class/power_supply/ | grep BAT)
+
+# exit if no battery available
+test -z "$BATN" && exit 1
+
+# get battery level and status (charging or not)
+BATC=`cat /sys/class/power_supply/${BATN}/capacity`
+BATS=`cat /sys/class/power_supply/${BATN}/status`
+
+CRITICAL=${CRITICAL:-7}
+BAT_BELL=${BAT_BELL:-beep -f 1000 -l 200}
+
+case $1 in
+    -h) usage ;;
+    -s) state ;;
+    -b) bell ;;
+     *) level ;;
+ esac

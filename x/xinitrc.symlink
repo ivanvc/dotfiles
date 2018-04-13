@@ -1,0 +1,9 @@
+#!/bin/sh
+
+xsetroot -cursor_name left_ptr
+
+bar &
+wew | yawee &
+sxhkd -m 1 &
+feh --bg-scale ~/.wallpapers/marinheadlands.jpg &
+exec xwait

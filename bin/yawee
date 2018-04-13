@@ -1,0 +1,28 @@
+#!/bin/sh
+
+WALL=$HOME/.wall.png
+BLUR=$HOME/.blur.png
+#BLUR=10
+
+blur() {
+    hsetroot -fill $WALL -blur ${1:-$BLUR}
+}
+
+while IFS=: read ev wid; do
+    case $ev in
+        # window creation
+        16) wattr o $wid || corner md $wid
+            ;;
+
+        # focus next window when deleting focused window
+        18) wattr $(pfw) || vroum prev 2>/dev/null
+            ;;
+
+        # mapping requests
+        19) wattr o $wid || vroum $wid &
+            ;;
+
+        # entering window
+        7) wattr o $wid || wtf $wid ;;
+    esac
+done

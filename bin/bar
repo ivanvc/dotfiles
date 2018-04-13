@@ -1,0 +1,32 @@
+#!/bin/bash
+
+delay=0.2
+primary="#7b8091"
+secondary="#3a232c"
+
+while true; do
+  output="%{r}"
+
+  # Wifi
+  online=$(ip add show wlp1s0 | grep UP > /dev/null && echo "on" || echo "off")
+  #essid=$(iwgetid | cut -d \" -f 2)
+  #if [[ "$essid" != "" ]]; then
+  #  output="${output}%{F#051525}$(iwconfig wlp1s0 | grep Quality | cut -d = -f 2 | cut -d / -f 1)% %{F#cccccc}@%{F#051525} $essid"
+  #fi
+  output="$output WiFi %{F$secondary}$online%{F-} "
+
+  # Volume
+  master="Speaker"
+  volume=$(amixer get $master | tail -1 | cut -d \[ -f 2 | cut -d \] -f 1)
+  output="$output  Vol %{F$secondary}$volume %{F-} "
+
+  # Battery
+  output="$output Bat %{F$secondary}$(battery) %{F-} "
+
+  # Time
+  time=$(date +"%H:%M")
+  output="$output %{F$secondary}$time%{F-} "
+
+  echo "$output"
+  sleep $delay
+done | lemonbar -f "Droid Sans Mono" -d -B "#cbd4d7" -F $primary -n "Bar" | /bin/bash
