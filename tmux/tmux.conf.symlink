@@ -34,8 +34,8 @@ set -g status-position bottom
 
 set -g status-right '#[fg=colour248,bg=colour237]  %H#[fg=colour244]:#[fg=colour248]%M  #[bg=colour240]  #[fg=colour250]%d#[fg=colour245]/#[fg=colour250]%m  #[fg=colour240,bg=colour254]  @#[fg=colour16,bold]#H  '
 set -g status-left '#[fg=colour245,bg=colour240] [#[fg=colour253]#S#[fg=colour245]] #[bg=colour235] '
-set -g window-status-format '#[fg=colour244,bg=colour237] #I #[fg=colour245]⎜#[fg=colour250] #W  '
-set -g window-status-current-format '#[fg=colour16,bg=colour208,bold] #I #[fg=colour239,nobold]⎜#[fg=white,bg=colour239] #W  '
+set -g window-status-format '#[fg=colour244,bg=colour237] #I #[fg=colour245]│#[fg=colour250] #W  '
+set -g window-status-current-format '#[fg=colour16,bg=colour208,bold] #I #[fg=colour239,nobold]│#[fg=white,bg=colour239] #W  '
 
 # Fix pasteboard on MacOS X
 # Install with $ brew install reattach-to-user-namespace
