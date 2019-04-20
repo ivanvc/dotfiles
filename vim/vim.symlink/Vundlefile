@@ -24,6 +24,7 @@ Plugin 'mxw/vim-jsx'
 Plugin 'derekwyatt/vim-scala'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'hashivim/vim-terraform'
 
 Plugin 'tpope/vim-fugitive'
 Plugin 'jamessan/vim-gnupg'
@@ -52,3 +53,7 @@ map <leader>R :.Rake<cr>
 
 " Don't fold markdown
 let g:vim_markdown_folding_disabled = 1
+
+" Terraform configuration
+let g:terraform_align=1       " override align configuration
+let g:terraform_fmt_on_save=1 " auto-run terraform fmt on save
