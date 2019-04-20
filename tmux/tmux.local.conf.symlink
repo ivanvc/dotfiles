@@ -1,0 +1,6 @@
+unbind C-s
+set -g prefix C-j
+
+set -g status-position top
+set -g window-status-current-format '#[fg=colour16,bg=colour197,bold] #I #[fg=colour239,nobold]⎜#[fg=white,bg=colour239] #W  '
+set -g status-right '#[fg=colour248,bg=colour237]  %H#[fg=colour244]:#[fg=colour248]%M  #[bg=colour240]  #[fg=colour250]%d#[fg=colour245]/#[fg=colour250]%m  #[fg=colour240,bg=colour254]  @#[fg=colour16,bold]#H#[fg=colour240,nobold]/#[fg=colour235,bold]#(battery)  '
