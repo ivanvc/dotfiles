@@ -42,3 +42,11 @@ bindkey '^[[3~' delete-char
 bindkey '^?' backward-delete-char
 bindkey ';2D' backward-word
 bindkey ';2C' forward-word
+
+bindkey '^R' history-incremental-search-backward
+bindkey '^P' up-line-or-history
+bindkey '^N' down-line-or-history
+bindkey '^F' forward-char
+bindkey '^B' backward-char
+bindkey '^A' beginning-of-line
+bindkey '^E' end-of-line
