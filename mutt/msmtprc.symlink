@@ -1,0 +1,14 @@
+defaults
+logfile ~/.local/share/msmtp/msmtp.log
+
+account default
+host west.exch081.serverdata.net
+port 587
+protocol smtp
+from iv@a.ki
+auth on
+user iv@a.ki
+passwordeval secret-tool lookup akimail password
+tls on
+tls_starttls on
+tls_trust_file /etc/ssl/certs/ca-certificates.crt

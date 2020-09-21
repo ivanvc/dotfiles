@@ -1,0 +1,45 @@
+IMAPAccount work
+Host west.exch081.serverdata.net
+User iv@a.ki
+PassCmd "secret-tool lookup akimail password"
+SSLType IMAPS
+SSLVersions TLSv1.2
+CertificateFile ~/.config/mbsync/akimail.pem
+AuthMechs LOGIN
+
+# Remote storage
+IMAPStore work-remote
+Account work
+
+# Local storage
+MaildirStore work-local
+Path ~/Mail/aki/
+Inbox ~/Mail/aki/INBOX
+SubFolders Verbatim
+
+# Sync all root paths, ignore Wins + RFPs
+Channel work
+Master :work-remote:
+Slave :work-local:
+Patterns % !"Wins + RFPs" !Contacts !Calendar !────────────────────────────────
+Create Both
+Expunge Both
+SyncState *
+
+# Sync archives (just keep 1000 messages)
+Channel work-archives
+Master :work-remote:
+Slave :work-local:
+Patterns Archives/% !Archives/2020
+Create Both
+Expunge Both
+MaxMessages 1000
+SyncState *
+
+# Sync all of the current year Archives
+Channel work-archive-latest
+Master :work-remote:"Archives/2020"
+Slave :work-local:"Archives/2020"
+#Create Both
+#Expunge Both
+SyncState *

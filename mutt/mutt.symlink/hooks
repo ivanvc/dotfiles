@@ -1,0 +1,2 @@
+message-hook . 'unalternative_order *; alternative_order text/calendar text/plain text/enriched text/html'
+message-hook '~f "@akitechnologies\.atlassian\.net"' 'unalternative_order *; alternative_order text/html'

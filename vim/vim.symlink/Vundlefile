@@ -4,8 +4,12 @@ call vundle#begin('~/.vim/vundle') " Initialize in custom path
 
 Plugin 'wgibbs/vim-irblack'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'dracula/vim', { 'name': 'dracula' }
+Plugin 'jeffkreeftmeijer/vim-dim'
 
 Plugin 'kien/ctrlp.vim'
+Plugin 'vifm/vifm'
+Plugin 'vifm/vifm.vim'
 Plugin 'itchyny/lightline.vim'
 
 Plugin 'elixir-lang/vim-elixir'
@@ -25,6 +29,8 @@ Plugin 'derekwyatt/vim-scala'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'hashivim/vim-terraform'
+Plugin 'mustache/vim-mustache-handlebars'
+Plugin 'google/vim-jsonnet'
 
 Plugin 'tpope/vim-fugitive'
 Plugin 'jamessan/vim-gnupg'
@@ -32,16 +38,24 @@ Plugin 'rking/ag.vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'vimwiki/vimwiki'
 
+Plugin 'junegunn/vim-emoji'
+
+Plugin 'cehoffman/lbdbq' " contacts lookup for mutt
+
+Plugin 'ledger/vim-ledger'
+
 call vundle#end()                  " required
 
 " And now Plugins specific configuration
 " vim-irblack
 " colorscheme ir_black               " set IR Black colorscheme
 " solarized
-colorscheme solarized
+" colorscheme solarized
+colorscheme dracula
 
 " Lightline
-let g:lightline = { 'colorscheme': 'solarized' }
+"let g:lightline = { 'colorscheme': 'solarized' }
+let g:lightline = { 'colorscheme': 'dracula' }
 
 " ctrlp
 let g:ctrlp_map = '<Leader>t'      " remap
@@ -57,3 +71,20 @@ let g:vim_markdown_folding_disabled = 1
 " Terraform configuration
 let g:terraform_align=1       " override align configuration
 let g:terraform_fmt_on_save=1 " auto-run terraform fmt on save
+
+" Emoji
+set completefunc=emoji#complete
+function! ReplaceEmoji()
+  let curr_line   = getline('.')
+  let replacement = substitute(curr_line, ':\([^:]\+\):', '\=emoji#for(submatch(1), submatch(0))', 'g')
+  call setline('.', replacement)
+endfunction
+map <leader>emo :call ReplaceEmoji()<cr>
+
+" Vifm
+map <leader>f :Vifm<CR>
+
+" Ledger auto syntax
+autocmd BufNewFile,BufRead *.journal set filetype=ledger
+"au FileType ledger inoremap <silent> <Tab> <C-r>=ledger#autocomplete_and_align()<CR>
+au FileType ledger vnoremap <silent> <Tab> :LedgerAlign<CR>

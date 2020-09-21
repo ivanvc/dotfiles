@@ -1,0 +1,12 @@
+# vim: filetype=muttrc
+
+set sidebar_visible = no
+
+bind index j         next-entry
+bind index k         previous-entry
+bind index <tab>     next-new-then-unread
+bind index <backtab> previous-new-then-unread
+bind index <return>  display-message
+bind index q         quit
+bind pager gg        top
+bind pager G         bottom

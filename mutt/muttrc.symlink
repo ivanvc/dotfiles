@@ -1,0 +1,115 @@
+# Who am I?
+set realname = "Ivan Valdes"
+
+# Accounts
+set from = "Ivan Valdes <iv@a.ki>"
+set hostname = "a.ki"
+#set signature = "~/.signature-work"
+set sendmail = "/usr/bin/msmtp"
+
+color status blue default
+
+# paths
+set folder = ~/Mail/aki
+set header_cache = ~/.mutt/cache/headers
+set message_cachedir = ~/.mutt/cache/bodies
+set certificate_file = ~/.config/mbsync/akimail.pem
+set mailcap_path = ~/.mutt/mailcap
+set tmpdir = ~/.mutt/tmp
+
+# basic options
+set wait_key = no
+set mbox_type = Maildir
+set timeout = 3
+set mail_check = 0
+set delete
+set quit
+set copy
+set thorough_search
+set mail_check_stats
+unset confirmappend
+unset move
+unset mark_old
+unset beep_new
+
+# compose View Options
+set envelope_from                    # which from?
+set edit_headers                     # show headers when composing
+set fast_reply                       # skip to compose when replying
+set askcc                            # ask for CC:
+set fcc_attach                       # save attachments with the body
+set forward_format = "Fwd: %s"       # format of subject when forwarding
+set forward_decode                   # decode when forwarding
+set attribution = "On %d, %n wrote:" # format of quoting header
+set reply_to                         # reply to Reply to: field
+set reverse_name                     # reply as whomever it was to
+set include                          # include message in replies
+set forward_quote                    # include message in forwards
+set editor = "nvim '+normal }' -c 'set spell spelllang=en'"
+set text_flowed
+unset mime_forward                   # forward attachments as part of body
+
+# status bar, date format, finding stuff etc.
+set status_chars = " *%A"
+set status_format = "[ Folder: %f ] [%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]%>─%?p?( %p postponed )?"
+set date_format = "%m/%d/%Y %H:%M"
+set index_format = "[%Z] %?X?A&-? %D  %-20.20F  %s"
+set sort = threads
+set sort_aux = reverse-last-date-received
+set uncollapse_jump
+set sort_re
+set reply_regexp = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
+set quote_regexp = "^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
+set send_charset = "utf-8:iso-8859-1:us-ascii"
+set charset = "utf-8"
+
+# Pager View Options
+set pager_index_lines = 10
+set pager_context = 3
+set pager_stop
+set menu_scroll
+set tilde
+unset markers
+
+# email headers and attachments
+ignore *
+unignore from: to: cc: bcc: date: subject:
+unhdr_order *
+hdr_order from: to: cc: bcc: date: subject:
+alternative_order text/calendar text/plain text/enriched text/html
+auto_view text/html text/calendar
+
+# when composing emails, use this command to get addresses from
+# the addressbook with khard first, and everything else from mu index
+set query_command = "lbdbq %s 2>/dev/null"
+
+# sidebar patch config
+set sidebar_visible = no
+set sidebar_short_path
+set sidebar_folder_indent
+set sidebar_width = 25
+set sidebar_divider_char = ' │ '
+set sidebar_indent_string = '  ''
+set sidebar_format = "%B %* [%?N?%N / ?%S]"
+
+set spoolfile = "+INBOX"
+set mbox = "+Archives/`date +%Y`"
+save-hook . "+Archives/%[%Y]"
+set postponed = "+Drafts"
+set record = "+Sent Items"
+set trash = "+Deleted Items"
+
+# Mailboxes
+named-mailboxes "↓ Inbox" =INBOX
+named-mailboxes "↑ Sent" ='Sent Items'
+named-mailboxes "∇ Trash" ='Deleted Items'
+named-mailboxes "∗ Junk" ='Junk Email'
+named-mailboxes "∃ Drafts" =Drafts
+named-mailboxes "⌹ Archive" ='Archives/2020'
+
+named-mailboxes "─────────────────────────────────" ~'/Mail/ignoreme'
+mailboxes `find ~/Mail/aki -maxdepth 1 -type d -not -path ~/Mail/aki -printf "+'%f' "`
+
+source ~/.mutt/colors
+source ~/.mutt/bindings
+source ~/.mutt/hooks

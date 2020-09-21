@@ -55,7 +55,7 @@ set t_Co=256                     " Explicitly tell Vim that the terminal support
 set background=dark              " Dark background
 set cursorline                   " Hightlights the current line
 set colorcolumn=80               " Display 80 chars column
-hi CursorLine ctermbg=black      " Change cursor line bg color
+"hi CursorLine ctermbg=black      " Change cursor line bg color
 
 " Display trailing white spaces
 highlight ExtraWhitespace ctermbg=darkred guibg=red   " Set color
@@ -116,14 +116,8 @@ function! Preserve(command)
   let @/=_s
   call cursor(l, c)
 endfunction
-nmap _$ :call Preserve("%s/\\s\\+$//e")<CR>
-nmap _= :call Preserve("normal gg=G")<CR>
-
-" ActionScript
-au Bufread,BufNewFile *.as set filetype=actionscript " Load as files
-autocmd FileType actionscript setlocal sw=2 sts=2 et " Set indentation level
-autocmd BufNewFile,BufRead *.mxml,*.as :nmap <C-B> :!bash ~/.vim/bin/fcshcmp.sh %:p
-autocmd BufNewFile,BufRead *.mxml,*.as :nmap <C-A> :!bash ~/.vim/bin/fcshcmp.sh %:p run
+nmap <leader>$ :call Preserve("%s/\\s\\+$//e")<CR>
+nmap <leader>= :call Preserve("normal gg=G")<CR>
 
 " Java
 au Bufread,BufNewFile *.as set filetype=java " Load as files
@@ -135,3 +129,23 @@ au BufRead /tmp/mutt-* set tw=72  " limit width to 72 chars"
 " Spellcheck Markdown files
 autocmd BufRead,BufNewFile *.md setlocal spell
 set complete+=kspell
+
+" Wrap lines to N chars
+function! Wordwrap(chars)
+  exe 'setlocal textwidth='.a:chars
+  execute "normal! \<S-v> }"
+  execute "normal gq"
+endfunction
+nmap <leader>w :call Wordwrap(80)<cr>
+
+" Terminal remappings
+if has('nvim')
+  " Exit with Esc/Ctr+[
+  tnoremap <Esc> <C-\><C-n>
+  " Send Esc with Alt+[
+  tnoremap <A-[> <Esc>
+
+  " Open a new terminal in a window
+  nmap <leader>wv :vsp term://zsh<cr>
+  nmap <leader>ws :sp term://zsh<cr>
+endif

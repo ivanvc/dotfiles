@@ -6,8 +6,8 @@ autoload -U $ZSH/zsh/functions/*(:t)
 autoload -U edit-command-line
 
 HISTFILE=~/.zsh_history
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=10000
+SAVEHIST=10000
 REPORTTIME=10 # print elapsed time when more than 10 seconds
 
 setopt NO_BG_NICE # don't nice background tasks

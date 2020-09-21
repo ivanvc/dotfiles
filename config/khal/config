@@ -1,0 +1,3 @@
+[calendars]
+  [[work]]
+    path = ~/.calendars/work/

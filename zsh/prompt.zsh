@@ -1,11 +1,11 @@
 if [[ -n $SSH_CONNECTION ]]; then
-  export PS1='$(git_branch)[%m:%2~]%# '
+  export PS1='$(git_branch)%F{111}[%f%m:%2~%F{111}]%f%# '
 else
-  export PS1='$(git_branch)[%2~]%# '
+  export PS1='%F{4}[%f$(due_tasks)$(git_branch)%2~%F{4}]%#%f '
 fi
 
 export SPROMPT='zsh: correct %F{red}%R%f to %F{green}%r%f [nyae]? '
-export RPROMPT='[%D{%L:%M:%S %p}]'
+#export RPROMPT='[%D{%L:%M:%S %p}]'
 export TMOUT=20
 
 TRAPALRM() {
@@ -13,7 +13,21 @@ TRAPALRM() {
 }
 
 function git_branch {
-  echo $(/usr/bin/git symbolic-ref HEAD 2>/dev/null | awk -F/ {'print $NF'})
+  b=$(/usr/bin/git symbolic-ref HEAD 2>/dev/null | awk -F/ {'print $NF'})
+  if [ ! -z $b ] ; then
+    echo "%F{12}$b%F{4}:%f"
+  fi
+}
+
+function due_tasks {
+  if (which task > /dev/null 2>&1) && [ -f "$HOME/.taskrc" ] ; then
+    local tasks=$(task '(due.before:today or due:today) and status:pending' count)
+    [ $tasks -gt 0 ] && echo "%F{9}$tasks%F{4}ǀ%f" && return
+    tasks=$(task '(due.after:today) and status:pending' count)
+    [ $tasks -gt 0 ] && echo "%F{11}$tasks%F{4}ǀ%f" && return
+    tasks=$(task 'status:pending' count)
+    [ $tasks -gt 0 ] && echo "%F{8}$tasks%F{4}ǀ%f" && return
+  fi
 }
 
 function zle-keymap-select {

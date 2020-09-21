@@ -1,0 +1,3 @@
+# Source: http://jasonwryan.com/blog/2012/04/21/lbdb/
+METHODS="m_ldap"
+LDAP_NICKS="work"

@@ -1,28 +1,30 @@
 [user]
   name = Ivan Valdes (@ivanvc)
-  email = iv@nvald.es
+  email = iv@a.ki
+	signingkey = 4037D37741ED0CC5
 [alias]
-  c = commit
-  ci = commit --interactive
-  ca = commit --amend
-  s = status
-  b = branch
-  co = checkout
-  r = rebase
-  re = reset
   a = add
   ai = add --interactive
   ap = add --patch
-  m = merge
+  b = branch
+  c = commit
+  d = diff
+  ca = commit --amend
+  ci = commit --interactive
+  co = checkout
+  s = status
   f = fetch
   l = pull
+  la = log -1 --pretty=format:'%cr: [%h] %an - %s' --abbrev-commit --date=relative
+  last = log -1
+  lt = log --graph --pretty=format:'[%h] -%d %an %cr: %s' --abbrev-commit --date=relative
+  m = merge
+  mt = mergetool
   p = push
   po = push origin
-  d = diff
+  r = rebase
+  re = reset
   sh = stash
-  last = log -1
-  la = log -1 --pretty=format:'%cr: [%h] %an - %s' --abbrev-commit --date=relative
-  lt = log --graph --pretty=format:'[%h] -%d %an %cr: %s' --abbrev-commit --date=relative
 [color]
   diff = auto
   status = auto
@@ -49,3 +51,7 @@
   smudge = git-media-smudge %f
 [credential]
 	helper = cache --timeout=604800
+[protocol "keybase"]
+	allow = always
+[commit]
+	gpgsign = true
