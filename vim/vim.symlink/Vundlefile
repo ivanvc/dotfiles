@@ -31,6 +31,7 @@ Plugin 'plasticboy/vim-markdown'
 Plugin 'hashivim/vim-terraform'
 Plugin 'mustache/vim-mustache-handlebars'
 Plugin 'google/vim-jsonnet'
+Plugin 'jparise/vim-graphql'
 
 Plugin 'tpope/vim-fugitive'
 Plugin 'jamessan/vim-gnupg'
@@ -43,6 +44,8 @@ Plugin 'junegunn/vim-emoji'
 Plugin 'cehoffman/lbdbq' " contacts lookup for mutt
 
 Plugin 'ledger/vim-ledger'
+
+Plugin 'lervag/vimtex'
 
 call vundle#end()                  " required
 
