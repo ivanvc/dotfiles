@@ -57,6 +57,12 @@ def get_accept_decline():
         elif ans.lower() == 'q\n':
             return None
 
+def get_skip_email():
+    while True:
+        sys.stdout.write("\nSkip email reply? [Y-yes/N-no] ")
+        ans = sys.stdin.readline()
+        return ans.lower() == 'y\n' or ans == '\n'
+
 def get_answer(invitation):
     # create
     ans = vobject.newFromBehavior('vcalendar')
@@ -269,12 +275,13 @@ if __name__=="__main__":
         call(khal_command)
 
     # send reply via mutt
-    mutt_command = get_mutt_command(ans, email_address, accept_decline,
-                                    icsfile, pid_path)
-    mailtext = "'%s has %s'" % (email_address, accept_decline.lower())
-    mailtext = "\n"
+    if not get_skip_email():
+        mutt_command = get_mutt_command(ans, email_address, accept_decline,
+                                        icsfile, pid_path)
+        mailtext = "'%s has %s'" % (email_address, accept_decline.lower())
+        mailtext = "\n"
 
-    execute(mutt_command, mailtext)
+        execute(mutt_command, mailtext)
 
     # delete tempporary files
     os.remove(icsfile)

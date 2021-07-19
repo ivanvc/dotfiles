@@ -51,7 +51,7 @@ unset mime_forward                   # forward attachments as part of body
 
 # status bar, date format, finding stuff etc.
 set status_chars = " *%A"
-set status_format = "[ Folder: %f ] [%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]%>─%?p?( %p postponed )?"
+set status_format = " %D / %r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ├%>─%?p?╢ %p postponed ╟╌┄┈?"
 set date_format = "%m/%d/%Y %H:%M"
 set index_format = "[%Z] %?X?A&-? %D  %-20.20F  %s"
 set sort = threads
@@ -86,11 +86,10 @@ set query_command = "lbdbq %s 2>/dev/null"
 # sidebar patch config
 set sidebar_visible = no
 set sidebar_short_path
-set sidebar_folder_indent
 set sidebar_width = 25
 set sidebar_divider_char = ' │ '
 set sidebar_indent_string = '  ''
-set sidebar_format = "%B %* [%?N?%N / ?%S]"
+set sidebar_format = "%D %* [%?N?%N / ?%S]"
 
 set spoolfile = "+INBOX"
 set mbox = "+Archives/`date +%Y`"
@@ -99,13 +98,16 @@ set postponed = "+Drafts"
 set record = "+Sent Items"
 set trash = "+Deleted Items"
 
+
 # Mailboxes
 named-mailboxes "↓ Inbox" =INBOX
 named-mailboxes "↑ Sent" ='Sent Items'
 named-mailboxes "∇ Trash" ='Deleted Items'
 named-mailboxes "∗ Junk" ='Junk Email'
 named-mailboxes "∃ Drafts" =Drafts
-named-mailboxes "⌹ Archive" ='Archives/2020'
+named-mailboxes "⌹ Archive" ='Archives'
+named-mailboxes "├ 2020" ='Archives/2020'
+named-mailboxes "└ 2021" ='Archives/2021'
 
 named-mailboxes "─────────────────────────────────" ~'/Mail/ignoreme'
 mailboxes `find ~/Mail/aki -maxdepth 1 -type d -not -path ~/Mail/aki -printf "+'%f' "`

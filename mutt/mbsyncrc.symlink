@@ -27,14 +27,14 @@ Expunge Both
 SyncState *
 
 # Sync archives (just keep 1000 messages)
-Channel work-archives
-Master :work-remote:
-Slave :work-local:
-Patterns Archives/% !Archives/2020
-Create Both
-Expunge Both
-MaxMessages 1000
-SyncState *
+#Channel work-archives
+#Master :work-remote:
+#Slave :work-local:
+#Patterns Archives/% !Archives/2019 !Archives/2020
+#Create Both
+#Expunge Both
+#MaxMessages 1000
+#SyncState *
 
 # Sync all of the current year Archives
 Channel work-archive-latest
@@ -43,3 +43,11 @@ Slave :work-local:"Archives/2020"
 #Create Both
 #Expunge Both
 SyncState *
+
+# Sync all of the previous year Archives
+#Channel work-archive-previous
+#Master :work-remote:"Archives/2019"
+#Slave :work-local:"Archives/2019"
+##Create Both
+##Expunge Both
+#SyncState *
