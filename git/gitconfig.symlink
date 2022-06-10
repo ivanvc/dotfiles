@@ -63,3 +63,5 @@
 	writeCommitGraph = true
 [pull]
 	rebase = false
+[gpg]
+	program = gpg-pinentry-mode-loopback
