@@ -12,6 +12,7 @@ Plugin 'vifm/vifm'
 Plugin 'vifm/vifm.vim'
 Plugin 'itchyny/lightline.vim'
 
+Plugin 'neovimhaskell/haskell-vim'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'fatih/vim-go'
 Plugin 'vim-ruby/vim-ruby'
@@ -37,7 +38,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'jamessan/vim-gnupg'
 Plugin 'rking/ag.vim'
 Plugin 'editorconfig/editorconfig-vim'
-Plugin 'vimwiki/vimwiki'
+Plugin 'fcpg/vim-waikiki'
 
 Plugin 'junegunn/vim-emoji'
 
@@ -70,6 +71,8 @@ map <leader>R :.Rake<cr>
 
 " Don't fold markdown
 let g:vim_markdown_folding_disabled = 1
+autocmd FileType markdown setl conceallevel=2
+autocmd FileType markdown setl concealcursor=""
 
 " Terraform configuration
 let g:terraform_align=1       " override align configuration
@@ -89,5 +92,20 @@ map <leader>f :Vifm<CR>
 
 " Ledger auto syntax
 autocmd BufNewFile,BufRead *.journal set filetype=ledger
-"au FileType ledger inoremap <silent> <Tab> <C-r>=ledger#autocomplete_and_align()<CR>
+au FileType ledger inoremap <silent> <Tab> <C-r>=ledger#autocomplete_and_align()<CR>
 au FileType ledger vnoremap <silent> <Tab> :LedgerAlign<CR>
+
+" Waikiki
+let maplocalleader = "\\"
+let g:waikiki_roots = ['~/Documents/Wiki']
+let g:waikiki_default_maps = 1
+let g:waikiki_conceal_markdown_url = 1
+map <leader>ww :e ~/Documents/Wiki/index.md<cr>
+function! WaikikiSetupBuffer() abort
+  setl concealcursor=""
+endfun
+augroup Waikiki
+  au!
+  autocmd User setup
+        \ call WaikikiSetupBuffer()
+augroup END
