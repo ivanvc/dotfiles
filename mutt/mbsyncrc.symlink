@@ -19,8 +19,8 @@ SubFolders Verbatim
 
 # Sync all root paths, ignore Wins + RFPs
 Channel work
-Master :work-remote:
-Slave :work-local:
+Far :work-remote:
+Near :work-local:
 Patterns % !"Wins + RFPs" !Contacts !Calendar !────────────────────────────────
 Create Both
 Expunge Both
@@ -28,8 +28,8 @@ SyncState *
 
 # Sync archives (just keep 1000 messages)
 #Channel work-archives
-#Master :work-remote:
-#Slave :work-local:
+#Far :work-remote:
+#Near :work-local:
 #Patterns Archives/% !Archives/2019 !Archives/2020
 #Create Both
 #Expunge Both
@@ -38,16 +38,16 @@ SyncState *
 
 # Sync all of the current year Archives
 Channel work-archive-latest
-Master :work-remote:"Archives/2020"
-Slave :work-local:"Archives/2020"
+Far :work-remote:"Archives/2021"
+Near :work-local:"Archives/2021"
 #Create Both
 #Expunge Both
 SyncState *
 
 # Sync all of the previous year Archives
 #Channel work-archive-previous
-#Master :work-remote:"Archives/2019"
-#Slave :work-local:"Archives/2019"
+#Far :work-remote:"Archives/2019"
+#Near :work-local:"Archives/2019"
 ##Create Both
 ##Expunge Both
 #SyncState *
