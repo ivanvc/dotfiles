@@ -4,6 +4,7 @@ set realname = "Ivan Valdes"
 # Accounts
 set from = "Ivan Valdes <iv@a.ki>"
 set hostname = "a.ki"
+set use_from = yes
 #set signature = "~/.signature-work"
 set sendmail = "/usr/bin/msmtp"
 

@@ -5,7 +5,7 @@ account default
 host west.exch081.serverdata.net
 port 587
 protocol smtp
-from iv@a.ki
+from "Ivan Valdes" <iv@a.ki>
 auth on
 user iv@a.ki
 passwordeval secret-tool lookup akimail password
