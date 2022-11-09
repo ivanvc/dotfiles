@@ -1,9 +1,0 @@
-[submodule "z/rupa-z"]
-	path = z/rupa-z
-	url = git@github.com:rupa/z.git
-[submodule "warp/warp"]
-	path = warp/warp
-	url = git@github.com:jpalardy/warp.git
-[submodule "vim/vim.symlink/bundle/Vundle.vim"]
-	path = vim/vim.symlink/bundle/Vundle.vim
-	url = git@github.com:gmarik/Vundle.vim.git
