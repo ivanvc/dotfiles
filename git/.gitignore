@@ -1,0 +1,5 @@
+# Conflict files
+*.orig
+
+# Vim swap files
+.*.sw[a-z]
