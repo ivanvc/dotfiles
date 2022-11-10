@@ -40,17 +40,13 @@
 	default = simple
 [difftool]
 	prompt = false
-[protocol "keybase"]
-	allow = always
 [commit]
-	#gpgsign = true
+	gpgsign = true
 [receive]
 	advertisePushOptions = true
 [gc]
 	writeCommitGraph = true
 [pull]
 	rebase = false
-[gpg]
-	program = gpg-pinentry-mode-loopback
 [init]
 	defaultBranch = main
