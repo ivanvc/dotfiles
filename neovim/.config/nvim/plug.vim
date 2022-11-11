@@ -31,8 +31,7 @@ colorscheme dracula
 let g:lightline = { 'colorscheme': 'dracula' }
 
 " Markdown
-" Don't autofold
-let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_folding_disabled = 1         " Don't autofold
 autocmd FileType markdown setl conceallevel=2
 autocmd FileType markdown setl concealcursor=""
 
