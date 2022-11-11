@@ -3,6 +3,6 @@
 
 alias ls='ls --color=auto'
 
-if [ -f $HOME/.bash.*.sh ]; then
-  for file in $HOME/.bash.*.sh; do source $file; done
-fi
+for file in $HOME/.bash.*.sh; do
+  [ -e "$file" ] && source $file
+done
