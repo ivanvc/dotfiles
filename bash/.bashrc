@@ -2,4 +2,7 @@
 [[ $- != *i* ]] && return
 
 alias ls='ls --color=auto'
-alias g=git
+
+if [ -f $HOME/.bash.*.sh ]; then
+  for file in $HOME/.bash.*.sh; do source $file; done
+fi
