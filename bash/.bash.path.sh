@@ -1,1 +1,1 @@
-export PATH=./bin:$HOME/bin:$PATH
+export PATH=$HOME/bin:$PATH
