@@ -1,1 +1,0 @@
-complete -cf doas
