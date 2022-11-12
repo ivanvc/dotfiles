@@ -1,3 +1,4 @@
+# vim: set ft=gitconfig:
 [user]
 	name = Ivan Valdes
 	email = iv@a.ki
@@ -17,7 +18,7 @@
 	l = pull
 	la = log -1 --pretty=format:'%cr: [%h] %an - %s' --abbrev-commit --date=relative
 	last = log -1
-	lt = log --graph --pretty=format:'[%h] -%d %an %cr: %s' --abbrev-commit --date=relative
+	lt = log --graph --pretty=format:'[%h] -%d %an (%cr): %s' --abbrev-commit --date=relative
 	m = merge
 	p = push
 	po = push origin

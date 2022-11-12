@@ -1,0 +1,19 @@
+#!/usr/bin/env sh
+
+usage () {
+  cat <<EOF
+Git deletes all locally deleted files.
+
+Usage: $(basename $0 | tr '-' ' ') [-h]
+    -h: print this help
+EOF
+}
+
+rm_deleted_files() {
+  git status | grep deleted | awk '{print $2}' | xargs -I{} git rm {}
+}
+
+case $1 in
+  -h) usage ;;
+   *) rm_deleted_files ;;
+esac
