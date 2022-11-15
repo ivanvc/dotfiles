@@ -126,3 +126,12 @@ endif
 
 " Ignore mouse
 set mouse=
+
+" Autoclose brackets in insert mode
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O
