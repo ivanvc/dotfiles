@@ -1,6 +1,0 @@
-# Vim stuff
-vim/vim.symlink/.netrwhist
-vim/vim.symlink/vundle
-
-# Tmux local configuration
-tmux/tmux.local.conf.symlink
