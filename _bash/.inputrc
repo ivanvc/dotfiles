@@ -1,3 +1,22 @@
+# Set vi mode
+set editing-mode vi
+
+# Display vi mode
+set show-mode-in-prompt on
+set vi-ins-mode-string \1\033[1;32m\2INS\1\033[m\2
+set vi-cmd-mode-string \1\033[1;31m\2CMD\1\033[m\2
+
+# Set autocomplete to show all possible results first
+set show-all-if-ambiguous on
+# Do not duplicate characters after the cursor
+set menu-complete-display-prefix on
+# Display colors when doing completion as `ls` does
+set colored-stats on
+# Display common prefix color in completion
+set colored-completion-prefix on
+
+# Key bindings
+TAB: menu-complete
 '\C-a':beginning-of-line
 '\C-b':backward-char
 '\C-e':end-of-line
@@ -5,3 +24,4 @@
 '\C-l':clear-screen
 '\C-n':next-history
 '\C-p':previous-history
+'\C-w':unix-word-rubout

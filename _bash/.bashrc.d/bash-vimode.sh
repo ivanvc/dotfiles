@@ -1,8 +1,5 @@
-# Set vi mode
-set -o vi
-
-# But still, use emacs keys to move around
+# Edit and execute with Ctrl-x Ctrk-e
 bind -m vi-insert '"\C-x\C-e":edit-and-execute-command'
 
+# Fix vi mode unix-word-rubout
 stty werase undef
-bind '\C-w':unix-word-rubout
