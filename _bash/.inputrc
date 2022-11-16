@@ -3,8 +3,8 @@ set editing-mode vi
 
 # Display vi mode
 set show-mode-in-prompt on
-set vi-ins-mode-string \1\033[1;32m\2INS\1\033[m\2
-set vi-cmd-mode-string \1\033[1;31m\2CMD\1\033[m\2
+set vi-ins-mode-string \1\033[1;35m\2INS\1\033[m\2
+set vi-cmd-mode-string \1\033[1;34m\2CMD\1\033[m\2
 
 # Set autocomplete to show all possible results first
 set show-all-if-ambiguous on
