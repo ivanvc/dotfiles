@@ -2,5 +2,7 @@
 [[ $- != *i* ]] && return
 
 for file in $HOME/.bashrc.d/*.sh; do
-  [ -e "$file" ] && source $file
+  [[ -e "$file" ]] && source "$file"
 done
+
+[[ -f "$HOME/.localrc" ]] && source "$HOME/.localrc"
