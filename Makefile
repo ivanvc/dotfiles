@@ -24,7 +24,7 @@ $(bashrc_d_stows):
 	@stow -t $(BASHRC_D_PATH) $(STOW_COMMAND) $@
 
 .PHONY: all
-all: $(all_stows)
+all: $(filter-out %/,$(all_stows))
 
 .PHONY: targets
 targets:
