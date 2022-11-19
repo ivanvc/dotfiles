@@ -114,14 +114,14 @@ nmap <leader>w :call Wordwrap(80)<cr>
 
 " Terminal remappings
 if has('nvim')
-  " Exit with Esc/Ctr+[
+  " Exit with Esc/Ctrl+[
   tnoremap <Esc> <C-\><C-n>
-  " Send Esc with Alt+[
-  tnoremap <A-[> <Esc>
+  " Send Esc with Ctr+l[
+  tnoremap <C-[> <Esc>
 
   " Open a new terminal in a window
-  nmap <leader>wv :vsp term://zsh<cr>
-  nmap <leader>ws :sp term://zsh<cr>
+  nmap <leader>wv :vsp term://$SHELL<cr>
+  nmap <leader>ws :sp term://$SHELL<cr>
 endif
 
 " Ignore mouse
