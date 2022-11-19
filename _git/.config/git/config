@@ -33,7 +33,7 @@
 	added = blue
 	changed = yellow
 [core]
-	excludesfile = ~/.gitignore
+	excludesfile = ~/.config/git/ignore
 	editor = vim
 	quotePath = false
 	commitGraph = true
