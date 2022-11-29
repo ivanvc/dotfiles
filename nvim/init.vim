@@ -129,7 +129,6 @@ set mouse=
 
 " Autoclose brackets in insert mode
 inoremap " ""<left>
-inoremap ' ''<left>
 inoremap ( ()<left>
 inoremap [ []<left>
 inoremap { {}<left>
