@@ -44,11 +44,14 @@ set tabstop=2                    " Global tab width.
 set shiftwidth=2                 " And again, related.
 set expandtab                    " Use spaces instead of tabs
 
-set t_Co=256                     " Explicitly tell Vim that the terminal supports 256 colors
-set background=dark              " Dark background
-set cursorline                   " Hightlights the current line
-set colorcolumn=80               " Display 80 chars column
-hi CursorLine ctermbg=black      " Change cursor line bg color
+set background=dark              " Dark background.
+set cursorline                   " Hightlights the current line.
+set colorcolumn=80               " Display 80 chars column.
+set termguicolors                " Enable colors in terminal mode.
+hi CursorLine ctermbg=black      " Change cursor line bg color.
+if !has('nvim')
+  set t_Co=256                   " Explicitly tell Vim that the terminal supports 256 colors
+endif
 
 " Display trailing white spaces
 highlight ExtraWhitespace ctermbg=darkred guibg=red   " Set color
