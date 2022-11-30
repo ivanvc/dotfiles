@@ -43,6 +43,8 @@
 	prompt = false
 [commit]
 	gpgsign = true
+[gpg]
+  program = /home/ivan/bin/gpg-pinentry-curses
 [receive]
 	advertisePushOptions = true
 [gc]
