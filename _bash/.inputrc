@@ -6,7 +6,7 @@ set show-mode-in-prompt on
 
 # Configures the mode display, by changing the cursor
 set vi-ins-mode-string \1\e[2 q\2
-set vi-cmd-mode-string \1\e[3 q\007\2
+set vi-cmd-mode-string \1\e[3 q\2\1\007\2
 
 # Set autocomplete to show all possible results first
 set show-all-if-ambiguous on
