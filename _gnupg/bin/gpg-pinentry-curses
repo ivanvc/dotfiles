@@ -1,0 +1,3 @@
+#!/bin/bash
+
+PINENTRY_USER_DATA=curses exec gpg $*

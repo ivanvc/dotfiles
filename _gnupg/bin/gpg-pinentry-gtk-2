@@ -1,0 +1,3 @@
+#!/bin/bash
+
+PINENTRY_USER_DATA=gtk-2 exec gpg $*
