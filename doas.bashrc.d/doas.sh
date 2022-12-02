@@ -1,3 +1,3 @@
-if command doas 2>/dev/null; then
+if command doas &>/dev/null; then
   complete -cf doas
 fi
