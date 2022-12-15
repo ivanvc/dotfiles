@@ -22,6 +22,10 @@ Plug 'jamessan/vim-gnupg'
 Plug 'fcpg/vim-waikiki'
 
 Plug 'junegunn/vim-emoji'
+
+Plug 'dyng/ctrlsf.vim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 call plug#end()
 
 " Colorscheme
@@ -58,3 +62,6 @@ augroup Waikiki
   autocmd User setup
         \ call WaikikiSetupBuffer()
 augroup END
+
+" Telescope
+nnoremap <leader>t <cmd>Telescope find_files<cr> "Open file finder
