@@ -5,7 +5,9 @@ alias kc=kubectx
 alias kn=kubens
 
 if command asdf &>/dev/null && [ -d `asdf where kubectx`/completion ]; then
-  source `asdf where kubectx`/completion/*.bash
+  for file in `asdf where kubectx`/completion/*.bash; do
+    source $file
+  done
   complete -F _kube_contexts kc
   complete -F _kube_namespaces kn
 fi
