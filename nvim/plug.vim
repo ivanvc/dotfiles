@@ -26,6 +26,8 @@ Plug 'junegunn/vim-emoji'
 Plug 'dyng/ctrlsf.vim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+
+Plug 'cohama/lexima.vim' " autoclose parenthesis
 call plug#end()
 
 " Colorscheme
