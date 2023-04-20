@@ -8,7 +8,7 @@ shopt -s histappend
 HISTCONTROL=erasedups:ignoreboth
 
 # After each command, append to the history file and reread it
-PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r"
+PROMPT_COMMAND="history -a;history -c;history -r;${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}"
 
 # Unlimited history
 HISTFILESIZE=
