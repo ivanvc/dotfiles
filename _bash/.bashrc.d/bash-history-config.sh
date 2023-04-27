@@ -11,5 +11,5 @@ HISTCONTROL=erasedups:ignoreboth
 PROMPT_COMMAND="history -a;history -c;history -r;${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}"
 
 # Unlimited history
-HISTFILESIZE=
-HISTSIZE=
+export HISTFILESIZE=
+export HISTSIZE=
