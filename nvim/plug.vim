@@ -67,3 +67,6 @@ augroup END
 
 " Telescope
 nnoremap <leader>t <cmd>Telescope find_files<cr> "Open file finder
+
+" Auto format terraform files
+let g:terraform_fmt_on_save = 1
