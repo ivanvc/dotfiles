@@ -11,7 +11,7 @@ Plug 'dracula/vim'
 
 Plug 'itchyny/lightline.vim'
 
-Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
 Plug 'plasticboy/vim-markdown'
 Plug 'hashivim/vim-terraform'
 Plug 'mustache/vim-mustache-handlebars'
@@ -26,6 +26,7 @@ Plug 'junegunn/vim-emoji'
 Plug 'dyng/ctrlsf.vim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 Plug 'cohama/lexima.vim' " autoclose parenthesis
 call plug#end()
