@@ -32,3 +32,7 @@ targets:
 	@echo xdg_config_stows=$(xdg_config_stows)
 	@echo root_stows=$(root_stows)
 	@echo bashrc_d_stows=$(bashrc_d_stows)
+
+.PHONY: uninstall
+uninstall: STOW_COMMAND :::= -D
+uninstall: all

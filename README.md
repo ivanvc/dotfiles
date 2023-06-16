@@ -39,10 +39,14 @@ There are three different types of directories in the root of the repository:
 
 ## How to use
 
-1. Run `make`
-2. There's no step 2
+1. Run `make`, which will symlink all directories [^1]
+2. There's no step 2 [^2]
 
 ## License
 
 Not sure why someone would license their dotfiles, so I guess the best license
 to fit here would be [WTFPL](http://www.wtfpl.net/txt/copying/).
+
+[^1]: Unless you want to symlink a single repository, in that case run `make`
+[^2]: Unless you want to uninstall, in that case just run `make uninstall`,
+      or `STOW_COMMAND -D make ` to unstow a single directory
