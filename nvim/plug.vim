@@ -67,7 +67,8 @@ augroup Waikiki
 augroup END
 
 " Telescope
-nnoremap <leader>t <cmd>Telescope find_files<cr> "Open file finder
+nnoremap <leader>t <cmd>Telescope find_files<cr> " Open file finder
+nnoremap <leader>f <cmd>Telescope live_grep<cr>  " Search files
 
 " Auto format terraform files
 let g:terraform_fmt_on_save = 1
