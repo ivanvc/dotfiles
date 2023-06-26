@@ -1,3 +1,3 @@
-if command zoxide &> /dev/null; then
+if command zoxide -h &> /dev/null; then
   eval "$(zoxide init bash)"
 fi
