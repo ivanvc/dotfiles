@@ -1,4 +1,5 @@
 #!/bin/bash
 
 PINENTRY_USER_DATA=${PINENTRY_USER_DATA:-gnome3}
+# shellcheck disable=SC2048,SC2086
 "/usr/bin/pinentry-$PINENTRY_USER_DATA" $*
