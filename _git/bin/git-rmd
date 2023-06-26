@@ -1,10 +1,10 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 usage () {
   cat <<EOF
 Git deletes all locally deleted files.
 
-Usage: $(basename $0 | tr '-' ' ') [-h]
+Usage: $(basename "$0" | tr '-' ' ') [-h]
     -h: print this help
 EOF
 }
