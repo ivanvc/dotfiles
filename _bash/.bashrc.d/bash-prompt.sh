@@ -1,3 +1,5 @@
+#!/bin/bash
+
 _prompt_git_branch() {
   branch=$(git symbolic-ref HEAD 2>/dev/null | awk -F/ '{print $NF}')
   [ ! -z "$branch" ] && echo "@$branch"

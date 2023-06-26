@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Set default application for directories:
 # xdg-mime default org.gnome.Nautilus.desktop inode/directory
 

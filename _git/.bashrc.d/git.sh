@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Alias git to "g"
 alias g=git
 

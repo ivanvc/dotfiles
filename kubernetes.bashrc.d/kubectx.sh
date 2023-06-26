@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Ignore kubectx's fzf
 export KUBECTX_IGNORE_FZF=1
 

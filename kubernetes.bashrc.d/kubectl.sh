@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Alias k to kubectl
 alias k=kubectl
 

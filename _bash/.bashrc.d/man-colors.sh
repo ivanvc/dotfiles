@@ -1,3 +1,5 @@
+#!/bin/bash
+
 man() {
   LESS_TERMCAP_md=$'\e[01;34m' \
   LESS_TERMCAP_me=$'\e[0m' \
