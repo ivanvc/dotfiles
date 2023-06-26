@@ -4,5 +4,5 @@
 # xdg-mime default org.gnome.Nautilus.desktop inode/directory
 
 function open {
-  xdg-open $@ 2> /dev/null
+  xdg-open "$@" 2> /dev/null
 }
