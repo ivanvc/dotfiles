@@ -2,10 +2,14 @@
 export ASDF_DATA_DIR=$HOME/.local/share/asdf
 
 # Initialize asdf
-if [ -f /opt/asdf-vm/asdf.sh ]; then
-  . /opt/asdf-vm/asdf.sh
-fi
+__initialize_asdf() {
+  local files="/opt/asdf-vm/asdf.sh /usr/local/opt/asdf/libexec/asdf.sh"
+  for file in $files; do
+    if [ -f "$file" ]; then
+      # shellcheck source=/dev/null
+      . "$file"
+    fi
+  done
+}
 
-if [ -f /usr/local/opt/asdf/libexec/asdf.sh ]; then
-  . /usr/local/opt/asdf/libexec/asdf.sh
-fi
+__initialize_asdf
