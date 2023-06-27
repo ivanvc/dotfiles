@@ -34,5 +34,5 @@ targets:
 	@echo bashrc_d_stows=$(bashrc_d_stows)
 
 .PHONY: uninstall
-uninstall: STOW_COMMAND :::= -D
+uninstall: STOW_COMMAND := -D
 uninstall: all
