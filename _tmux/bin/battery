@@ -1,0 +1,56 @@
+#!/usr/bin/env bash
+#
+# Adapted from z3bra's - (c) wtfpl 2014
+
+usage () {
+  cat <<EOF
+usage: $(basename "$0") [-h]
+    -h: print this help
+    -p: percentage
+    -l: level (bar)
+EOF
+}
+
+# output the current battery level
+level () {
+  level=""
+  if [ "$BATC" -ge 10 ] && [ "$BATC" -lt 20 ] ; then
+    level=▁
+  elif [ "$BATC" -ge 20 ] && [ "$BATC" -lt 30 ] ; then
+    level=▂
+  elif [ "$BATC" -ge 30 ] && [ "$BATC" -lt 40 ] ; then
+    level=▃
+  elif [ "$BATC" -ge 40 ] && [ "$BATC" -lt 50 ] ; then
+    level=▃
+  elif [ "$BATC" -ge 50 ] && [ "$BATC" -lt 60 ] ; then
+    level=▄
+  elif [ "$BATC" -ge 60 ] && [ "$BATC" -lt 70 ] ; then
+    level=▅
+  elif [ "$BATC" -ge 70 ] && [ "$BATC" -lt 80 ] ; then
+    level=▆
+  elif [ "$BATC" -ge 80 ] && [ "$BATC" -lt 90 ] ; then
+    level=▇
+  elif [ "$BATC" -ge 90 ] ; then
+    level=█
+  fi
+  echo "${level}"
+}
+
+# output the current battery percentage
+percent() {
+  echo "${BATC}%"
+}
+
+# get battery name
+BATN=$(find /sys/class/power_supply -name 'BAT*')
+
+# exit if no battery available
+test -d "$BATN" || exit 1
+
+BATC=$(cat "$BATN"/capacity)
+
+case $1 in
+  -h) usage ;;
+  -l) level ;;
+   *) percent ;;
+esac

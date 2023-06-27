@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if [ -f "$HOME"/.kube/config ]; then
+  context="$(grep -E ^current-context: ~/.kube/config | awk '{print $2}')"
+  namespace="$(grep -E '\- context:' -A 2 ~/.kube/config | grep 'cluster: '"$context" -A 1 | grep namespace | awk '{print $2}')"
+  if [ -z "$namespace" ]; then
+    namespace=default
+  fi
+  printf "#[fg=colour250,nobold]%s#[fg=colour254,bold]@#[fg=colour250,nobold]%s" "$namespace" "$context"
+fi
