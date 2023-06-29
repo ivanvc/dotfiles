@@ -1,6 +1,10 @@
 aws-vault 6.6.0
+awscli 2.12.3
+direnv 2.32.3
 drone 1.6.1
+fd 8.7.0
 golang 1.20.2
+helm 3.12.1
 jq 1.6
 jsonnet 0.19.1
 k9s 0.26.7
@@ -9,12 +13,8 @@ kubecolor 0.0.25
 kubectl 1.25.4
 kubectx 0.9.4
 kustomize 4.5.7
-helm 3.12.1
-ripgrep 13.0.0
-fd 8.7.0
-tree-sitter 0.20.8
 operator-sdk 1.29.0
-zoxide 0.9.1
+ripgrep 13.0.0
 shellcheck 0.9.0
-direnv 2.32.3
-awscli 2.12.3
+tree-sitter 0.20.8
+zoxide 0.9.1
