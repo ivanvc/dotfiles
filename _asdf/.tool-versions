@@ -17,3 +17,4 @@ operator-sdk 1.29.0
 zoxide 0.9.1
 shellcheck 0.9.0
 direnv 2.32.3
+awscli 2.12.3
