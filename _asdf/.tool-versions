@@ -4,6 +4,7 @@ direnv 2.32.3
 drone 1.6.1
 fd 8.7.0
 golang 1.20.2
+goreleaser 1.19.1
 helm 3.12.1
 jq 1.6
 jsonnet 0.19.1
