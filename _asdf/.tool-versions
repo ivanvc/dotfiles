@@ -3,11 +3,11 @@ awscli 2.12.3
 direnv 2.32.3
 drone 1.6.1
 fd 8.7.0
+go-jsonnet 0.20.0
 golang 1.20.2
 goreleaser 1.19.1
 helm 3.12.1
 jq 1.6
-jsonnet 0.19.1
 k9s 0.26.7
 kind 0.17.0
 kubecolor 0.0.25
