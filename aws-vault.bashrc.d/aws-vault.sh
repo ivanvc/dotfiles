@@ -22,7 +22,7 @@ ave() {
 
 	[ -n "$AWS_VAULT" ] && unset AWS_VAULT
 
-	echo eval "$(aws-vault exec -d"$duration" "$profile" env | grep AWS_ | xargs -I{} ${macos:+"-S1024"} echo export {})"
+	eval "$(aws-vault exec -d"$duration" "$profile" env | grep AWS_ | xargs -I{} ${macos:+"-S1024"} echo export {})"
 }
 
 unave() {
