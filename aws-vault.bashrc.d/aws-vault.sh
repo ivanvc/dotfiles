@@ -4,12 +4,18 @@
 ave() {
 	if [ "$1" = "-h" ] || [ "$1" = "--help" ] || [ "$1" = "help" ]; then
 		cat <<- EOF
-		Usage: ave profile [duration]
+		Usage: ave [-l/--list] profile [duration]
 		
-		profile:  The name of the profile in your ~/.aws/config file to assume.
-		duration: The desired duration for the temporary keys before they expire,
-		          i.e., 5m, 1h, 24h (default: 3h).
+		-l/--list: List the available AWS profiles from ~/.aws/config.
+		profile:   The name of the profile in your ~/.aws/config file to assume.
+		duration:  The desired duration for the temporary keys before they expire,
+		           i.e., 5m, 1h, 24h (default: 3h).
 		EOF
+		return
+	fi
+	if [ "$1" = "-l" ] || [ "$1" = "--list" ]; then
+		echo Available AWS profiles:
+		awk '/^\[profile/{print gensub(/^\[profile ([^\]]*)]/, "\t\\1", "g", $0);}' "$HOME/.aws/config" | sort
 		return
 	fi
 
