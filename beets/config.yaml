@@ -1,0 +1,69 @@
+color: yes
+artist_credit: yes
+asciify_paths: yes
+paths:
+  default: 'Albums/%the{$albumartist}/[%if{$year,$year,0000}] %the{$album}%aunique{}/%if{$multidisc,$disc-}$track - $title'
+  singleton: 'Singles/%the{$artist}/$title'
+  comp: 'Compilations/[%if{$year,$year,0000}] %the{$album}%aunique{}/%if{$multidisc,$disc-}$track - $title'
+  albumtype:soundtrack: 'Soundtracks/[%if{$year,$year,0000}] %the{$album}%aunique{}/%if{$multidisc,$disk-}$track - $title'
+  albumtype:single: 'Singles/%the{$artist}/[%if{$year,$year,0000}] %the{$album}%aunique{}/%if{$multidisc,$disc-}$track - $title'
+
+directory: /run/media/ivan/disk1/Music
+import:
+  bell: yes
+  from_scratch: yes
+  languages: en
+  move: yes
+  write: yes
+library: ~/.local/share/beets/library.db
+plugins:
+# search songs by fingerprint rather than tags
+- chroma
+- duplicates
+- edit
+- embedart
+- fetchart
+- ftintitle
+# fuzzy searches
+- fuzzy
+- info
+- importadded
+- lastgenre
+- lyrics
+- mbsync
+- missing
+- rewrite
+- scrub
+- the
+- inline
+ui:
+  color: yes
+path_sep_replace: _
+art_filename: cover  # results in "cover.jpg"
+
+scrub:
+  auto: yes
+
+fetchart:
+  auto: yes
+  cautious: yes
+  cover_names: front back
+
+embedart:
+  auto: yes
+
+lastgenre:
+  whitelist: '~/.config/beets/lastgenre/whitelist.txt'
+  canonical: true
+  min_weight: 20
+  prefer_specific: no
+  fallback: Unknown
+
+lyrics:
+  auto: yes
+
+rewrite:
+  artist Queen\+: Queen
+
+item_fields:
+  multidisc: disctotal > 1
