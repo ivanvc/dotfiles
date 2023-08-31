@@ -8,7 +8,7 @@ paths:
   albumtype:soundtrack: 'Soundtracks/[%if{$year,$year,0000}] %the{$album}%aunique{}/%if{$multidisc,$disk-}$track - $title'
   albumtype:single: 'Singles/%the{$artist}/[%if{$year,$year,0000}] %the{$album}%aunique{}/%if{$multidisc,$disc-}$track - $title'
 
-directory: /run/media/ivan/disk1/Music
+directory: /run/media/ivan/disk/Music
 import:
   bell: yes
   from_scratch: yes
