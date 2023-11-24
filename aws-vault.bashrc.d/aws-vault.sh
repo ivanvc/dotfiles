@@ -2,10 +2,10 @@
 # vim: set noexpandtab:
 
 ave() {
-	if [ "$1" = "-h" ] || [ "$1" = "--help" ] || [ "$1" = "help" ]; then
+	if [ "$1" = "-h" ] || [ "$1" = "--help" ] || [ "$1" = "help" ] || [ -z "$1" ]; then
 		cat <<- EOF
 		Usage: ave [-l/--list] profile [duration]
-		
+
 		-l/--list: List the available AWS profiles from ~/.aws/config.
 		profile:   The name of the profile in your ~/.aws/config file to assume.
 		duration:  The desired duration for the temporary keys before they expire,
@@ -25,6 +25,15 @@ ave() {
 	[ -z "$duration" ] && duration=3h
 	local macos
 	[ "$(uname -s)" = "Darwin" ] && macos="yes"
+
+	case "$profile" in
+		root|mgmt) profile=management ;;
+		dev) profile=development ;;
+		stg) profile=staging ;;
+		prod) profile=production ;;
+		ev) profile=eyeview ;;
+		sn) profile=social_next ;;
+	esac
 
 	[ -n "$AWS_VAULT" ] && unset AWS_VAULT
 
