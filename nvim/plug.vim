@@ -71,6 +71,8 @@ augroup END
 nnoremap <leader>t <cmd>Telescope find_files<cr>
 " Search files
 nnoremap <leader>f <cmd>Telescope live_grep<cr>
+" Search current string in files
+nnoremap <leader>s <cmd>Telescope grep_string<cr>
 
 " Auto format terraform files
 let g:terraform_fmt_on_save = 1
