@@ -3,7 +3,7 @@ awscli 2.12.3
 direnv 2.32.3
 drone 1.6.1
 fd 8.7.0
-golang 1.21.4
+golang 1.21.5
 goreleaser 1.19.1
 helm 3.12.1
 jq 1.6
