@@ -44,5 +44,5 @@ unave() {
 	local macos
 	[ "$(uname -s)" = "Darwin" ] && macos="yes"
 
-	eval "$(env | grep AWS_ | sed 's/=.*//' | xargs -I{} ${macos:+"-S1024"} echo unset {})"
+	eval "$(env | grep AWS_ | grep -v AWS_VAULT_PROMPT | sed 's/=.*//' | xargs -I{} ${macos:+"-S1024"} echo unset {})"
 }
