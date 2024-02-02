@@ -1,6 +1,9 @@
 set nocompatible                  " Must come first because it changes other options.
 
 source ~/.config/nvim/plug.vim    " Source vim-plug from an external file
+if !empty(globpath('~/', '.local.vim'))
+  source ~/.local.vim
+endif
 
 set laststatus=2                  " Always display status bar
 

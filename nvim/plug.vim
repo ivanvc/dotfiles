@@ -29,6 +29,10 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 Plug 'cohama/lexima.vim' " autoclose parenthesis
+
+if !empty(globpath('~/', '.local.plug.vim'))
+  source ~/.local.plug.vim
+endif
 call plug#end()
 
 " Colorscheme
