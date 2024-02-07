@@ -12,6 +12,7 @@ Plug 'dracula/vim'
 Plug 'itchyny/lightline.vim'
 
 Plug 'fatih/vim-go', {'do': ':GoUpdateBinaries'}
+Plug 'uarun/vim-protobuf'
 Plug 'plasticboy/vim-markdown'
 Plug 'hashivim/vim-terraform'
 Plug 'mustache/vim-mustache-handlebars'
