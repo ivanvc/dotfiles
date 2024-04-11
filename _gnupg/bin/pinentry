@@ -1,5 +1,10 @@
 #!/bin/bash
 
-PINENTRY_USER_DATA=${PINENTRY_USER_DATA:-gnome3}
-# shellcheck disable=SC2048,SC2086
-"/usr/bin/pinentry-$PINENTRY_USER_DATA" $*
+if [ "$(uname -s)" = "Darwin" ]; then
+	# shellcheck disable=SC2048,SC2086
+	"/usr/local/bin/pinentry-mac" $*
+else
+	PINENTRY_USER_DATA=${PINENTRY_USER_DATA:-gnome3}
+	# shellcheck disable=SC2048,SC2086
+	"/usr/bin/pinentry-$PINENTRY_USER_DATA" $*
+fi
