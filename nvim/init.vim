@@ -119,6 +119,7 @@ function! Wordwrap(chars)
   execute "normal gq"
 endfunction
 nmap <leader>w :call Wordwrap(80)<cr>
+nmap <leader>W :call Wordwrap(72)<cr>
 
 " Terminal remappings
 if has('nvim')
