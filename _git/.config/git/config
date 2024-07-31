@@ -13,6 +13,9 @@
 	ca = commit --amend
 	ci = commit --interactive
 	co = checkout
+	cp = cherry-pick
+	cpa = cherry-pick --abort
+	cpc = cherry-pick --continue
 	s = status
 	f = fetch
 	l = pull
@@ -20,10 +23,15 @@
 	last = log -1
 	lt = log --graph --pretty=format:'[%h] -%d %an (%cr): %s' --abbrev-commit --date=relative
 	m = merge
+	ma = merge --abort
+	mt = mergetool
 	p = push
 	po = push origin
 	r = rebase
+	ra = rebase --abort
+	rc = rebase --continue
 	re = reset
+	ri = rebase --interactive
 	sh = stash
 [color]
 	diff = auto
