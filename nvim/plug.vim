@@ -61,6 +61,7 @@ let maplocalleader = "\\"
 let g:waikiki_roots = ['~/Documents/Wiki']
 let g:waikiki_default_maps = 1
 let g:waikiki_conceal_markdown_url = 1
+let g:waikiki_done = 'x'
 map <leader>ww :e ~/Documents/Wiki/index.md<cr>
 function! WaikikiSetupBuffer() abort
   setl concealcursor=""
