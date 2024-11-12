@@ -37,12 +37,12 @@ ave() {
 
 	[ -n "$AWS_VAULT" ] && unset AWS_VAULT
 
-	eval "$(aws-vault exec -d"$duration" "$profile" env | grep AWS_ | xargs -I{} ${macos:+"-S1024"} echo export {})"
+	eval "$(aws-vault exec -d"$duration" "$profile" env | grep '^AWS_' | xargs -I{} ${macos:+"-S1024"} echo export {})"
 }
 
 unave() {
 	local macos
 	[ "$(uname -s)" = "Darwin" ] && macos="yes"
 
-	eval "$(env | grep AWS_ | grep -v AWS_VAULT_PROMPT | sed 's/=.*//' | xargs -I{} ${macos:+"-S1024"} echo unset {})"
+	eval "$(env | grep '^AWS_' | grep -v AWS_VAULT_PROMPT | sed 's/=.*//' | xargs -I{} ${macos:+"-S1024"} echo unset {})"
 }
