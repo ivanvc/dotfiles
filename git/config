@@ -47,6 +47,7 @@
 	commitGraph = true
 [push]
 	default = simple
+  autoSetupRemote = true
 [difftool]
 	prompt = false
 [commit]

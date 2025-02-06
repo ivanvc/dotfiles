@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+usage () {
+  cat <<EOF
+Checkout a branch with my username as prefix.
+
+Usage: $(basename "$0" | tr '-' ' ') [-h] branch_name [checkout options]
+    -h: print this help
+EOF
+}
+
+checkout_branch() {
+  local branch_name=$1
+  shift
+  git checkout -b "ivanvc/$branch_name" "$@"
+}
+
+case $1 in
+  -h) usage ;;
+   *) checkout_branch "$@" ;;
+esac

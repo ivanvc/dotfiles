@@ -10,7 +10,7 @@ EOF
 }
 
 rm_deleted_files() {
-  git status | grep deleted | awk '{print $2}' | xargs -I{} git rm {}
+  git status --short | awk '/^\s+D/{print $2}' | xargs -I{} git rm {}
 }
 
 case $1 in
