@@ -1,6 +1,16 @@
 #!/bin/bash
 
-if [ -f /usr/share/bash-completion/completions/pass ]; then
-  # shellcheck source=/dev/null
-  source /usr/share/bash-completion/completions/pass
-fi
+__load_pass_autocomplete() {
+  local files=(
+    "/usr/share/bash-completion/completions/pass"
+    "/home/linuxbrew/.linuxbrew/etc/bash_completion.d/pass"
+  )
+  for file in "${files[@]}"; do
+    if [ -f "$file" ] ; then
+      # shellcheck source=/dev/null
+      . "$file"
+    fi
+  done
+}
+
+__load_pass_autocomplete
