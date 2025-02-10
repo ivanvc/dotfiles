@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if which nvim &>/dev/null; then
+  exec nvim -R "$@"
+else
+  exec /usr/bin/view "$@"
+fi
