@@ -5,8 +5,12 @@ alias g=git
 
 # Load autocomplete
 __load_git_autocomplete() {
-  local files="/Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash /usr/share/git/completion/git-completion.bash"
-  for file in $files; do
+  local files=(
+    "/Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash"
+    "/usr/share/git/completion/git-completion.bash"
+    "/usr/share/doc/git/contrib/completion/git-completion.bash"
+  )
+  for file in "${files[@]}"; do
     if [ -f "$file" ] ; then
       # shellcheck source=/dev/null
       . "$file"
