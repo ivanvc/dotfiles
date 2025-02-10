@@ -19,8 +19,11 @@ $(xdg_config_stows):
 $(root_stows):
 	@stow $(STOW_COMMAND) $@
 
+$(HOME)/.bashrc.d:
+	mkdir -p $(HOME)/.bashrc.d
+
 .PHONY: $(bashrc_d_stows)
-$(bashrc_d_stows):
+$(bashrc_d_stows): $(HOME)/.bashrc.d
 	@stow -t $(BASHRC_D_PATH) $(STOW_COMMAND) $@
 
 .PHONY: all
