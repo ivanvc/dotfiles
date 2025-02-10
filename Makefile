@@ -39,3 +39,9 @@ targets:
 .PHONY: uninstall
 uninstall: STOW_COMMAND := -D
 uninstall: all
+
+.PHONY: lint
+lint:
+	find . -name '*.sh' -print0 | xargs -I{} -0 shellcheck {}
+	find . -executable -a \! -type d -a \! -path '*/.*' -print0 | \
+	  xargs -0 -I{} shellcheck {}
