@@ -29,6 +29,12 @@ $(bashrc_d_stows): $(HOME)/.bashrc.d
 .PHONY: all
 all: $(filter-out %/,$(all_stows))
 
+.PHONY: restow
+restow:
+	@if [ -z "$(DIR)" ]; then echo "Please provide the \$$DIR variable"; exit 1; fi
+	$(MAKE) $(DIR) STOW_COMMAND=-D
+	$(MAKE) $(DIR)
+
 .PHONY: targets
 targets:
 	@echo all_stows=$(all_stows)
