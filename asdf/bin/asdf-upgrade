@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+main() {
+  while IFS= read -r line; do
+    [ -z "$line" ] && continue
+
+    local tool
+    local version
+    local latest_version
+    local update
+
+    tool=$(echo "$line" | awk '{print $1}')
+    version=$(echo "$line" | awk '{print $2}')
+    latest_version=$(asdf latest "$tool")
+    [ "$version" == "$latest_version" ] && continue
+
+    read -rp "Update $tool from $version to $latest_version? [y/N] " update </dev/tty
+    [ "${update,,}" != "y" ] && continue
+
+    asdf install "$tool" latest
+    asdf set -u "$tool" "$latest_version"
+  done < <(cat .tool-versions)
+}
+
+main
