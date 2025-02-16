@@ -16,6 +16,13 @@ After 10+ years of using Zsh as my shell, I returned ye good old Bash. The only
 thing I miss is an excellent shared history across sessions. I never used Oh My
 Zsh or any other frameworks, so my usage was pretty basic.
 
+### Iteration 3.5
+
+I still like the thematic directories, and I still don't like the hidden
+file in this repository. So, it was time for a new iteration on the previous
+iteration as I started splitting directories into multiple directories to avoid
+hidden files. Long story short, keep reading on.
+
 ## Requirements
 
 1. `make`
@@ -23,19 +30,26 @@ Zsh or any other frameworks, so my usage was pretty basic.
 
 ## Project directory layout
 
-There are three different types of directories in the root of the repository:
+There are four different types of directories in the root of the repository:
 
-1. Directories that start with an underscore (i.e., `_bash`): These directories
-   contain files that are symlink at the root directory (`~/`) of the user
-   as-is. Therefore, the files inside are actual dotfiles (so watch out for
-   those hidden guys!).
-2. Directories that don't start with an underscore (i.e., `nvim`): These
-   directories are symlinked in `$XDG_CONFIG_HOME` (`~/.config/`). In this case,
-   the files are not hidden (yay!)
-3. Directories that end with `bashrc.d` (i.e., `direnv.bashrc.d`): These
-   directories contain files that will symlink at `~/.bashrc.d/`. Although this
-   directory is not a standard, I'm just placing anything that needs to be
-   initialized after Bash here (and these files are not hidden either, yay!)
+1. Directories that have a `.config` suffix (i.e., `beets.config`): These
+   directories will be symlinked at
+   `~/.config/<directory name without .config suffix>`.
+2. Directories that have a `.bin` suffix (i.e., `something.bin`): These
+   directories will be symlinked at `~/.local/bin`, which is at the front of
+   `$PATH`.
+3. Directories that have a `.profile.d` suffix (i.e., `aws.profile.d`): These
+   directories contain files that will be symlinked at `~/.config/profile.d`,
+   which will be source by `~/.bashrc`.
+4. Directories with no suffix. These can have:
+    1. A `bin` directory, these files will be symlinked at `~/.local/bin`.
+    2. A `config` directory, this directory will be symlinked at
+       `~/.config/<directory name>`, i.e. `~/.config/nvim` for `nvim/config`.
+    3. A `profile.d` directory, the files in this directory will be symlinked at
+       `~/.config/profile.d`.
+    4. Files and directories that start with a underscore (`_`), will be
+       symlinked at the `$HOME` level replacing the first `_` with a `.`, i.e.,
+       `_bashrc` will be symlinked at `~/.bashrc`
 
 ## How to use
 
