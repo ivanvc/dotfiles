@@ -4,9 +4,9 @@ _prompt_git_branch() {
   branch=$(git symbolic-ref HEAD 2>/dev/null | awk -F/ '{print $NF}')
   commit=$(git rev-parse HEAD 2>/dev/null | awk '{print substr($0,1,7)}')
   if [ -n "$branch" ]; then
-    printf "\e[01m@\033[0m$branch"
+    printf "\001\033[01\002m@\001\033[0m\002$branch"
   elif [ -n "$commit" ]; then
-    printf "\e[01m#\033[0m$commit"
+    printf "\001\033[01m\002#\001\033[0m\002$commit"
   fi
 }
 
@@ -14,9 +14,9 @@ _prompt() {
   local exit_code=$?
   if [ -z "${COPY_MODE+x}" ]; then
     if [ "$exit_code" -eq 0 ]; then
-      printf "${PWD/$HOME/"~"}$(_prompt_git_branch)\e[38;2;127;127;170m❯\033[0m"
+      echo -ne "${PWD/$HOME/"~"}$(_prompt_git_branch)\001\033[38;2;127;127;170m\002❯\001\033[m\002"
     else
-      printf "${PWD/$HOME/"~"}$(_prompt_git_branch)\e[1;35;170m❯\033[0m"
+      echo -ne "${PWD/$HOME/"~"}$(_prompt_git_branch)\001\033[1;35;170m\002❯\001\033[m\002"
     fi
   else
     printf "\$"
