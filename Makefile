@@ -23,19 +23,19 @@ $(REQ_DIRS):
 
 .PHONY: $(combined_stows)
 $(combined_stows):
-	if [ -d "$@/config" ]; then $(MAKE) "$@/config"; fi
-	if [ -d "$@/profile.d" ]; then $(MAKE) "$@/profile.d"; fi
-	if [ -d "$@/bin" ]; then $(MAKE) "$@/bin"; fi
+	if [ -d "$(@:%/=%)/config" ]; then $(MAKE) "$(@:%/=%)/config"; fi
+	if [ -d "$(@:%/=%)/profile.d" ]; then $(MAKE) "$(@:%/=%)/profile.d"; fi
+	if [ -d "$(@:%/=%)/bin" ]; then $(MAKE) "$(@:%/=%)/bin"; fi
 	for file in $(wildcard $@/_*); do \
 		if [ -d "$$file" ]; then \
-			if [ ! -d "$(HOME)/.$${file#$@/_}" ]; then \
-				echo mkdir -p "$(HOME)/.$${file#$@/_}"; \
+			if [ ! -d "$(HOME)/.$${file#$(@:%/=%)/_}" ]; then \
+				echo mkdir -p "$(HOME)/.$${file#$(@:%/=%)/_}"; \
 			fi; \
 			for f in $$file/*; do \
-				ln --symbolic --force $(PWD)/$$f $(HOME)/."$${file#$@/_}"/; \
+				ln --symbolic --force $(PWD)/$$f $(HOME)/."$${file#$(@:%/=%)/_}"/; \
 			done; \
 		else \
-			ln --symbolic --force $(PWD)/$$file $(HOME)/."$${file#$@/_}"; \
+			ln --symbolic --force $(PWD)/$$file $(HOME)/."$${file#$(@:%/=%)/_}"; \
 		fi; \
 	done
 
