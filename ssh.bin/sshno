@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+if [ -z "$1" ]; then
+  echo "usage: sshno <ssh arguments>"
+  echo "Executes ssh with strict host key checking set to off."
+  return
+fi
+
+exec ssh -o StrictHostKeyChecking=no "$@"
