@@ -1,2 +1,3 @@
 -t $HOME
 -v2
+--ignore sw[p-z]
