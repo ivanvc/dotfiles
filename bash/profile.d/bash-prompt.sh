@@ -16,7 +16,7 @@ _prompt() {
     if [ "$exit_code" -eq 0 ]; then
       echo -ne "${PWD/$HOME/"~"}$(_prompt_git_branch)\001\033[38;2;127;127;170m\002❯\001\033[m\002"
     else
-      echo -ne "${PWD/$HOME/"~"}$(_prompt_git_branch)\001\033[1;35;170m\002❯\001\033[m\002"
+      echo -ne "${PWD/$HOME/"~"}$(_prompt_git_branch)\001\033[1;34m\002❯\001\033[m\002"
     fi
   else
     printf "\$"
