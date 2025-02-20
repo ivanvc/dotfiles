@@ -1,0 +1,12 @@
+brew "asdf"
+brew "tmux"
+
+# password-store
+brew "pass"
+tap "amar1729/formulae"
+brew "browserpass"
+## end tap
+
+# Required by Python
+brew "sqlite3"
+brew "tcl-tk"
