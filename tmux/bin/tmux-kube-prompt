@@ -1,8 +1,12 @@
 #!/bin/sh
 
 if [ -f "$HOME"/.kube/config ]; then
-  context="$(grep -E ^current-context: ~/.kube/config | awk '{print $2}')"
-  namespace="$(grep -E '\- context:' -A 2 ~/.kube/config | grep 'cluster: '"$context" -A 1 | grep namespace | awk '{print $2}')"
+  context="$(grep -E ^current-context: "$HOME"/.kube/config | awk '{print $2}')"
+  namespace="$(grep -E '\- context:' -A 2 "$HOME"/.kube/config | \
+    grep 'cluster: '"$context" -A 1 | grep namespace | awk '{print $2}')"
+  if [ -z "$context" ]; then
+    return
+  fi
   if [ -z "$namespace" ]; then
     namespace=default
   fi
