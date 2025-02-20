@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+awk '/^[^#\s]/{print $1}' "${XDG_CONFIG_HOME}/flatpak/Flatfile" | xargs -I {} flatpak install --assumeyes {}
