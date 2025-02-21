@@ -20,6 +20,8 @@ _prompt() {
     if [ "$exit_code" -ne 0 ]; then
       format="%s%s\001\033[1;34m\002❯\001\033[m\002"
     fi
+    # shellcheck disable=SC2059
+    # "$format" is the format to apply.
     printf "$format" "${PWD/$HOME/"~"}" "$(_prompt_git_branch)"
   else
     printf "\$"
