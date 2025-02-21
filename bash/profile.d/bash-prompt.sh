@@ -4,9 +4,9 @@ _prompt_git_branch() {
   branch=$(git symbolic-ref HEAD 2>/dev/null | awk -F/ '{print $NF}')
   commit=$(git rev-parse HEAD 2>/dev/null | awk '{print substr($0,1,7)}')
   if [ -n "$branch" ]; then
-    printf "\001\033[01\002m@\001\033[0m\002$branch"
+    printf "\001\033[01\002m@\001\033[0m\002%s" "$branch"
   elif [ -n "$commit" ]; then
-    printf "\001\033[01m\002#\001\033[0m\002$commit"
+    printf "\001\033[01m\002#\001\033[0m\002%s" "$commit"
   fi
 }
 
