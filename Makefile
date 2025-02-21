@@ -1,14 +1,14 @@
 all_dirs := $(wildcard */)
 all_stows := $(all_dirs) $(patsubst %/,%,$(all_dirs))
-combined_stows := $(filter-out %.profile.d/,$(filter-out %.profile.d,$(filter-out %.config,$(filter-out %.config/,$(all_stows)))))
+combined_stows := $(filter-out %.profile.d/ %.profile.d %.config %.config/ %.bin %.bin/,$(all_stows))
 
 combined_stows_config := $(sort $(addsuffix /config,$(combined_stows:%/=%)))
 combined_stows_profile_d := $(sort $(addsuffix /profile.d,$(combined_stows:%/=%)))
 combined_stows_bin := $(sort $(addsuffix /bin,$(combined_stows:%/=%)))
 
-xdg_config_stows := $(filter %.config,$(all_stows)) $(filter %.config/,$(all_stows))
-profile_d_stows := $(filter %.profile.d,$(all_stows)) $(filter %.profile.d/,$(all_stows))
-bin_stows := $(filter %.bin,$(all_stows)) $(filter %.bin/,$(all_stows))
+xdg_config_stows := $(filter %.config %.config/,$(all_stows))
+profile_d_stows := $(filter %.profile.d %.profile.d/,$(all_stows))
+bin_stows := $(filter %.bin %.bin/,$(all_stows))
 
 XDG_CONFIG_HOME ?= $(HOME)/.config
 PROILE_D_PATH := $(XDG_CONFIG_HOME)/profile.d
@@ -95,4 +95,5 @@ targets:
 	@echo combined_stows/profile.d: $(combined_stows_profile_d):
 	@echo profile_d_stows=$(profile_d_stows)
 	@echo xdg_config_stows=$(xdg_config_stows)
+	@echo bin_stows=$(bin_stows)
 	@echo REQ_DIRS=$(REQ_DIRS)
