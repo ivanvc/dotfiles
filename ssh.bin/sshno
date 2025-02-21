@@ -6,4 +6,4 @@ if [ -z "$1" ]; then
   return
 fi
 
-exec ssh -o StrictHostKeyChecking=no "$@"
+exec ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no "$@"
