@@ -41,6 +41,10 @@ percent() {
   echo "${BATC}%"
 }
 
+tmux_display() {
+  echo "#[fg=colour240]/#[fg=colour235,bold]$(percent) #[bg=colour235,fg=colour254]$(level)"
+}
+
 # get battery name
 BATN=$(find /sys/class/power_supply -name 'BAT*')
 
@@ -52,5 +56,6 @@ BATC=$(cat "$BATN"/capacity)
 case $1 in
   -h) usage ;;
   -l) level ;;
-   *) percent ;;
+  -p) percent ;;
+  *) tmux_display ;;
 esac
