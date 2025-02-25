@@ -13,6 +13,7 @@ org.gnome.Maps
 org.gnome.Loupe
 org.gnome.Loupe.HEIC
 org.gnome.baobab
+ca.desrt.dconf-editor
 
 # Gnome extension manager with Downloads
 com.mattjakeman.ExtensionManager
