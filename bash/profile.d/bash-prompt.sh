@@ -13,18 +13,20 @@ _prompt_git_branch() {
   fi
 }
 
-_prompt() {
-  local exit_code=$?
+__prompt_command() {
   if [ -z "${COPY_MODE+x}" ]; then
-    local format="%s%s\001\033[38;2;127;127;170m\002❯\001\033[m\002"
-    if [ "$exit_code" -ne 0 ]; then
-      format="%s%s\001\033[1;34m\002❯\001\033[m\002"
+    local job_count=$(jobs | wc -l | tr -d 0)
+    if [ ! -z "$job_count" ]; then
+      job_count="\001\033[2;35m\002${job_count}\001\033[5;34m\002❮\001\033[m\002"
     fi
-    # shellcheck disable=SC2059
-    # "$format" is the format to apply.
-    printf "$format" "${PWD/$HOME/"~"}" "$(_prompt_git_branch)"
+    local exit_code=$?
+    local exit_code_color="\001\033[38;2;127;127;170m\002"
+    if [ "$exit_code" -ne 0 ]; then
+      exit_code_color="\001\033[1;34m\002"
+    fi
+    PS1=$(printf "%s%s%s%s❯\001\033[m\002 " "${job_count}" "${PWD/$HOME/"~"}" "$(_prompt_git_branch)" "$exit_code_color")
   else
-    printf "\$"
+    PS1='$ '
   fi
 }
 
@@ -37,4 +39,5 @@ cm() {
   fi
 }
 
-PS1='$(_prompt) '
+
+export PROMPT_COMMAND=__prompt_command
