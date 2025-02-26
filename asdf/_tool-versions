@@ -1,6 +1,7 @@
 direnv 2.35.0
 drone 1.8.0
 fd 8.7.0
+gcloud 510.0.0
 golang 1.23.6
 goreleaser 1.19.1
 helm 3.17.1
@@ -14,10 +15,7 @@ python 3.12.9
 shellcheck 0.10.0
 tree-sitter 0.25.1
 trivy 0.59.1
-ttyd 1.7.7
-vhs 0.9.0
 woodpecker-cli 3.1.0
 yamlfmt 0.16.0
-zoxide 0.9.7
 
 go-jsonnet 0.20.0 # depends on go and jq

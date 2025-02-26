@@ -4,6 +4,7 @@ brew "tmux"
 
 # Command line utilities
 brew "zoxide"
+brew "glow"
 
 # Containers
 brew "podman"
@@ -18,8 +19,7 @@ brew "ripgrep"
 # Cloud providers
 brew "aws-vault"
 brew "awscli"
-brew "gcloud"
-brew "github-cli"
+brew "gh"
 
 # Kuberentes utils
 brew "k9s"
@@ -30,7 +30,11 @@ brew "kind"
 # Required by Python
 brew "sqlite3"
 brew "tcl-tk"
-#
+
+# Command-line capture
+brew "ttyd"
+brew "vhs"
+
 # password-store
 brew "pass"
 tap "amar1729/formulae"
