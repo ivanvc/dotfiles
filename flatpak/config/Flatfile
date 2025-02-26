@@ -28,3 +28,6 @@ org.keepassxc.KeePassXC
 com.slack.Slack
 com.spotify.Client
 us.zoom.Zoom
+
+# Dev applications
+io.podman_desktop.PodmanDesktop
