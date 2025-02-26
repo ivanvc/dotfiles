@@ -1,12 +1,38 @@
+# Top level dependencies
 brew "asdf"
 brew "tmux"
 
+# Command line utilities
+brew "zoxide"
+
+# Containers
+brew "podman"
+
+# Vim
+brew "neovim"
+
+# Command line searching
+brew "the_silver_searcher"
+brew "ripgrep"
+
+# Cloud providers
+brew "aws-vault"
+brew "awscli"
+brew "gcloud"
+brew "github-cli"
+
+# Kuberentes utils
+brew "k9s"
+brew "kubectx"
+brew "kubecolor"
+brew "kind"
+
+# Required by Python
+brew "sqlite3"
+brew "tcl-tk"
+#
 # password-store
 brew "pass"
 tap "amar1729/formulae"
 brew "browserpass"
 ## end tap
-
-# Required by Python
-brew "sqlite3"
-brew "tcl-tk"
