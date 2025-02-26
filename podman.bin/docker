@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if command podman --version &>/dev/null; then
+  exec podman "$@"
+else
+  exec $(PATH="${PATH/"${HOME}/.local/bin:"/}" which docker) "$@"
+fi
