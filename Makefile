@@ -26,7 +26,7 @@ $(combined_stows):
 	if [ -d "$(@:%/=%)/config" ]; then $(MAKE) "$(@:%/=%)/config"; fi
 	if [ -d "$(@:%/=%)/profile.d" ]; then $(MAKE) "$(@:%/=%)/profile.d"; fi
 	if [ -d "$(@:%/=%)/bin" ]; then $(MAKE) "$(@:%/=%)/bin"; fi
-	for file in $(wildcard $@/_*); do \
+	for file in $(wildcard $(@:%/=%)/_*); do \
 		if [ -d "$$file" ]; then \
 			if [ ! -d "$(HOME)/.$${file#$(@:%/=%)/_}" ]; then \
 				echo mkdir -p "$(HOME)/.$${file#$(@:%/=%)/_}"; \
