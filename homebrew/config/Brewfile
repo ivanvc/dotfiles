@@ -18,7 +18,6 @@ brew "ripgrep"
 
 # Cloud providers
 brew "aws-vault"
-brew "awscli"
 brew "gh"
 
 # Kuberentes utils
