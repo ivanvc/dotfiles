@@ -5,6 +5,7 @@ brew "tmux"
 # Command line utilities
 brew "zoxide"
 brew "glow"
+brew "bind"
 
 # Containers
 brew "podman"
