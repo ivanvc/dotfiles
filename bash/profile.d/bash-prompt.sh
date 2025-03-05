@@ -18,7 +18,7 @@ __prompt_command() {
     local job_count
     job_count=$(jobs -s | wc -l | tr -d 0)
     if [ -n "$job_count" ]; then
-      job_count="\001\033[2;35m\002${job_count}\001\033[5;34m\002❮\001\033[m\002"
+      job_count="\001\033[2;34m\002${job_count}\001\033[5;34m\002|\001\033[m\002"
     fi
     local exit_code=$?
     local exit_code_color="\001\033[38;2;127;127;170m\002"
