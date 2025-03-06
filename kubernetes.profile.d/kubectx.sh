@@ -14,3 +14,8 @@ if command asdf &>/dev/null && asdf which kubectx &> /dev/null && [ -d "$(asdf w
   complete -F _kube_contexts kc
   complete -F _kube_namespaces kn
 fi
+
+if brew list kubectx &>/dev/null; then
+  complete -F _kube_contexts kc
+  complete -F _kube_namespaces kn
+fi
