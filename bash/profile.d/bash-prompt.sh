@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-_prompt_git_branch() {
+__prompt_git_branch() {
   local branch
   local commit
   branch=$(git symbolic-ref HEAD 2>/dev/null | awk -F/ '{print $NF}')
@@ -25,7 +25,7 @@ __prompt_command() {
     if [ "$exit_code" -ne 0 ]; then
       exit_code_color="\001\033[1;34m\002"
     fi
-    PS1=$(printf "%s%s%s%s❯\001\033[m\002 " "${job_count}" "${PWD/$HOME/"~"}" "$(_prompt_git_branch)" "$exit_code_color")
+    PS1=$(printf "%s%s%s%s❯\001\033[m\002 " "${job_count}" "${PWD/$HOME/"~"}" "$(__prompt_git_branch)" "$exit_code_color")
   else
     PS1='$ '
   fi
@@ -41,4 +41,4 @@ cm() {
 }
 
 
-export PROMPT_COMMAND=__prompt_command
+PROMPT_COMMAND="__prompt_command;${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}"
