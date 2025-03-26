@@ -1,6 +1,7 @@
 # Top level dependencies
 brew "asdf"
 brew "tmux"
+brew "netcat"
 
 # Command line utilities
 brew "zoxide"
