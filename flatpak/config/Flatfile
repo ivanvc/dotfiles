@@ -29,6 +29,7 @@ com.slack.Slack
 com.spotify.Client
 us.zoom.Zoom
 org.videolan.VLC
+org.gimp.GIMP
 
 # Dev applications
 io.podman_desktop.PodmanDesktop
