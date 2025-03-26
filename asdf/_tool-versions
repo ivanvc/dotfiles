@@ -3,7 +3,7 @@ direnv 2.35.0
 drone 1.8.0
 fd 8.7.0
 gcloud 510.0.0
-golang 1.23.6
+golang 1.23.7
 goreleaser 1.19.1
 helm 3.17.1
 jq 1.7.1
