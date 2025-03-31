@@ -2,7 +2,7 @@
 [user]
 	name = Ivan Valdes
 	email = iv@a.ki
-	signingkey = 4037D37741ED0CC5
+	signingkey = /home/ivan/.ssh/id_ed25519.pub
 [alias]
 	a = add
 	ai = add --interactive
@@ -54,6 +54,7 @@
 	gpgsign = true
 [gpg]
 	program = gpg-pinentry-curses
+	format = ssh
 [receive]
 	advertisePushOptions = true
 [gc]
