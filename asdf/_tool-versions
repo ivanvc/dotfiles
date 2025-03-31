@@ -18,5 +18,5 @@ tree-sitter 0.25.1
 trivy 0.59.1
 woodpecker-cli 3.1.0
 yamlfmt 0.16.0
-
 go-jsonnet 0.20.0 # depends on go and jq
+kind 0.27.0
