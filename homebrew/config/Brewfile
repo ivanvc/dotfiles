@@ -2,6 +2,7 @@
 brew "asdf"
 brew "tmux"
 brew "netcat"
+brew "bash-completion@2"
 
 # Command line utilities
 brew "zoxide"
