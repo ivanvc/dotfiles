@@ -73,13 +73,6 @@ map <leader>tf :tabfirst<cr>
 map <leader>tl :tablast<cr>
 map <leader>tm :tabmove
 
-" Unicode characters
-if has("multi_byte")
-  if &termencoding == ""
-    let &termencoding = &encoding
-  endif
-endif
-
 " Encoding
 set encoding=utf8
 
