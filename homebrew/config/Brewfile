@@ -42,3 +42,13 @@ brew "pass"
 tap "amar1729/formulae"
 brew "browserpass"
 ## end tap
+
+# MacOS specifics
+if OS.mac?
+  brew "bash"
+  cask "zoom"
+  cask "firefox"
+  cask "kitty"
+  cask "slack"
+  cask "spotify"
+end
