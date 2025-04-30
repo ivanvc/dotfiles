@@ -29,13 +29,13 @@ $(combined_stows):
 	for file in $(wildcard $(@:%/=%)/_*); do \
 		if [ -d "$$file" ]; then \
 			if [ ! -d "$(HOME)/.$${file#$(@:%/=%)/_}" ]; then \
-				echo mkdir -p "$(HOME)/.$${file#$(@:%/=%)/_}"; \
+				mkdir -p "$(HOME)/.$${file#$(@:%/=%)/_}"; \
 			fi; \
 			for f in $$file/*; do \
-				ln --symbolic --force $(PWD)/$$f $(HOME)/."$${file#$(@:%/=%)/_}"/; \
+				ln -s -f $(PWD)/$$f $(HOME)/."$${file#$(@:%/=%)/_}"/; \
 			done; \
 		else \
-			ln --symbolic --force $(PWD)/$$file $(HOME)/."$${file#$(@:%/=%)/_}"; \
+			ln -s -f $(PWD)/$$file $(HOME)/."$${file#$(@:%/=%)/_}"; \
 		fi; \
 	done
 
