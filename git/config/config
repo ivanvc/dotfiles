@@ -2,7 +2,7 @@
 [user]
 	name = Ivan Valdes
 	email = iv@a.ki
-	signingkey = /home/ivan/.ssh/id_ed25519.pub
+	signingkey = ~/.ssh/id_ed25519.pub
 [alias]
 	a = add
 	ai = add --interactive
