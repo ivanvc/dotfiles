@@ -3,6 +3,7 @@ org.gnome.Calculator
 org.gnome.Calendar
 org.gnome.Characters
 org.gnome.clocks
+org.gnome.Connections
 org.gnome.font-viewer
 org.gnome.NautilusPreviewer
 org.gnome.Papers
@@ -24,6 +25,7 @@ io.github.flattool.Warehouse
 
 # General usage applications
 org.mozilla.firefox
+app.zen_browser.zen
 org.keepassxc.KeePassXC
 com.slack.Slack
 com.spotify.Client
