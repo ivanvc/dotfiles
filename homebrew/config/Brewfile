@@ -41,10 +41,9 @@ brew "vhs"
 brew "pass"
 brew "pass-otp"
 tap "amar1729/formulae"
-brew "browserpass"
+brew "amar1729/formulae/browserpass"
 tap "simplydanny/pass-extensions"
-brew "pass-update"
-## end tap
+brew "simplydanny/pass-extensions/pass-update"
 
 # MacOS specifics
 if OS.mac?
