@@ -2,6 +2,8 @@ awscli 2.24.5
 aws-vault 7.2.0
 direnv 2.35.0
 drone 1.8.0
+eksctl 0.221.0
+eks-node-viewer 0.7.4
 fd 8.7.0
 gcloud 510.0.0
 golang 1.25.0
@@ -21,3 +23,4 @@ woodpecker-cli 3.12.0
 yamlfmt 0.16.0
 go-jsonnet 0.20.0 # depends on go and jq
 kind 0.27.0
+terraform 1.5.7
