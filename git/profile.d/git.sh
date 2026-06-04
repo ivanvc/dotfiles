@@ -9,6 +9,7 @@ __load_git_autocomplete() {
     "/Applications/Xcode.app/Contents/Developer/usr/share/git-core/git-completion.bash"
     "/usr/share/git/completion/git-completion.bash"
     "/usr/share/doc/git/contrib/completion/git-completion.bash"
+    "/home/linuxbrew/.linuxbrew/etc/bash_completion.d/git-completion.bash"
   )
   for file in "${files[@]}"; do
     if [ -f "$file" ] ; then
