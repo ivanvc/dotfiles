@@ -10,7 +10,9 @@ shopt -s histappend
 export HISTCONTROL=erasedups:ignoreboth
 
 # After each command, append to the history file and reread it
-PROMPT_COMMAND="history -a;history -c;history -r${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}"
+if [[ -z "${TERM_PROGRAM+x}" || "${TERM_PROGRAM}" == "tmux" ]]; then
+  PROMPT_COMMAND="history -a;history -c;history -r${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}"
+fi
 
 # Unlimited history
 export HISTFILESIZE=-1
