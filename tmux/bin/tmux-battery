@@ -45,13 +45,19 @@ tmux_display() {
   echo "#[fg=colour240]/#[fg=colour235,bold]$(percent) #[bg=colour235,fg=colour254]$(level)"
 }
 
-# get battery name
-BATN=$(find /sys/class/power_supply -name 'BAT*')
+if [ -d /sys/class/power_supply ]; then
+  # get battery name
+  BATN=$(find /sys/class/power_supply -name 'BAT*')
 
-# exit if no battery available
-test -d "$BATN" || exit 1
+  # exit if no battery available
+  test -d "$BATN" || exit 1
 
-BATC=$(cat "$BATN"/capacity)
+  BATC=$(cat "$BATN"/capacity)
+elif command pmset -g &>/dev/null; then
+  BATC=$(pmset -g ps | tail -n1 | awk '{print $3}' | sed 's/[^0-9]*//g')
+else
+  exit 1
+fi
 
 case $1 in
   -h) usage ;;
