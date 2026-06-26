@@ -41,4 +41,8 @@ cm() {
 }
 
 
-PROMPT_COMMAND="__prompt_command;${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}"
+if [ -z "${TERM_PROGRAM+x}" ] || [ "${TERM_PROGRAM}" == "tmux" ]; then
+  bind "set vi-ins-mode-string \"\1\e[2 q\2\""
+  bind "set vi-cmd-mode-string \"\1\e[3 q\2\1\007\2\""
+  PROMPT_COMMAND="__prompt_command;${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}"
+fi
