@@ -14,6 +14,7 @@ org.gnome.Maps
 org.gnome.Loupe
 org.gnome.Loupe.HEIC
 org.gnome.baobab
+org.gnome.SimpleScan
 ca.desrt.dconf-editor
 
 # Gnome extension manager with Downloads
