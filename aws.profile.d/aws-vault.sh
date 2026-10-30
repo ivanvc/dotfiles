@@ -9,7 +9,7 @@ ave() {
 		-l/--list: List the available AWS profiles from ~/.aws/config.
 		profile:   The name of the profile in your ~/.aws/config file to assume.
 		duration:  The desired duration for the temporary keys before they expire,
-		           i.e., 5m, 1h, 24h (default: 1h).
+		           i.e., 5m, 1h, 24h (default: 6h).
 		EOF
 		return
 	fi
@@ -22,7 +22,7 @@ ave() {
 	local profile="$1"
 	shift
 	local duration="$1"
-	[ -z "$duration" ] && duration=1h
+	[ -z "$duration" ] && duration=6h
 	local macos
 	[ "$(uname -s)" = "Darwin" ] && macos="yes"
 
