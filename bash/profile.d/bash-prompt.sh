@@ -16,7 +16,7 @@ __prompt_git_branch() {
 __prompt_command() {
   if [ -z "${COPY_MODE+x}" ]; then
     local job_count
-    job_count=$(jobs -s | wc -l | tr -d 0 | xargs)
+    job_count=$(jobs -s | wc -l | sed 's/^0$//' | xargs)
     if [ -n "$job_count" ]; then
       job_count="\001\033[0;34m\002▐\001\033[3;34m\002${job_count}\001\033[0;34m\002▌\001\033[m\002"
     fi
