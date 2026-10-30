@@ -31,8 +31,8 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 Plug 'cohama/lexima.vim' " autoclose parenthesis
 
-if !empty(globpath('~/', '.local.plug.vim'))
-  source ~/.local.plug.vim
+if !empty(globpath('~/.config/nvim', 'local.plug.vim'))
+  source ~/.config/nvim/local.plug.vim
 endif
 call plug#end()
 
