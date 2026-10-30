@@ -116,8 +116,9 @@ nmap <leader>W :call Wordwrap(72)<cr>
 
 " Terminal remappings
 if has('nvim')
-  " Exit with Esc/Ctrl+[
+  " Exit with Esc/Control+n
   tnoremap <Esc> <C-\><C-n>
+  tnoremap <C-n> <C-\><C-n>
   " Send Esc with Ctr+l[
   tnoremap <C-[> <Esc>
 
